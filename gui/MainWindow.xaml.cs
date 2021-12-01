@@ -24,5 +24,15 @@ namespace SR44_2020_POP2021
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Koj meseg hoces da pokazes!");
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            crud.CreateFile();
+        }
     }
 }

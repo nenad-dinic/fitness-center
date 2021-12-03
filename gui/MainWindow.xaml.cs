@@ -23,6 +23,7 @@ namespace SR44_2020_POP2021
         public MainWindow()
         {
             InitializeComponent();
+            DataCotroller.Init();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -32,7 +33,7 @@ namespace SR44_2020_POP2021
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            crud.CreateFile();
+            DataCotroller.CreateUser(0, "Nenad", "Dinic", "0806001762022",DataTypes.Genders.male, new DataTypes.Address(0, "Street", "number", "City", "Country") , "nenad.d.dinic01@gmail.com", DataTypes.UserTypes.admin, new DateTime(0));
         }
     }
 }

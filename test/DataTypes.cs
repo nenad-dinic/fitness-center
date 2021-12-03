@@ -30,6 +30,12 @@ namespace SR44_2020_POP2021
             public int id;
             public string name;
             public Address address;
+            public FitnessCenter(int id, string name, Address address)
+            {
+                this.id = id;
+                this.name = name;
+                this.address = address;
+            }
         }
 
         public enum Genders
@@ -75,8 +81,8 @@ namespace SR44_2020_POP2021
             public DateTime startTime;
             public int duration;
             public bool isReserved;
-            public int idTrainer;
-            public int idTrainee;
+            public User trainer;
+            public User trainee;
 
         }
     }

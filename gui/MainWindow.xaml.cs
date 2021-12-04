@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SR44_2020_POP2021
+namespace SR44_2020_POP2021.Gui
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,7 +23,7 @@ namespace SR44_2020_POP2021
         public MainWindow()
         {
             InitializeComponent();
-            DataCotroller.Init();
+            DataController.Init();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -31,9 +31,10 @@ namespace SR44_2020_POP2021
             MessageBox.Show("Koj meseg hoces da pokazes!");
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void RegBtn_Click(object sender, RoutedEventArgs e)
         {
-            DataCotroller.CreateUser(0, "Nenad", "Dinic", "0806001762022",DataTypes.Genders.male, new DataTypes.Address(0, "Street", "number", "City", "Country") , "nenad.d.dinic01@gmail.com", DataTypes.UserTypes.admin, new DateTime(0));
+            RegisterWindow regWin = new RegisterWindow();
+            regWin.Show();
         }
     }
 }

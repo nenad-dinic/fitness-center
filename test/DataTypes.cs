@@ -78,12 +78,22 @@ namespace SR44_2020_POP2021
         {
             public int id;
             public DateTime date;
-            public DateTime startTime;
+            public TimeSpan startTime;
             public int duration;
             public bool isReserved;
             public User trainer;
             public User trainee;
 
+            public Training(int id, DateTime date, TimeSpan startTime, int duration, bool isReserved, DataTypes.User trainer, DataTypes.User trainee)
+            {
+                this.id = id;
+                this.date = date;
+                this.startTime = startTime;
+                this.duration = duration;
+                this.isReserved = isReserved;
+                this.trainer = trainer;
+                this.trainee = trainee;
+            }
         }
     }
 }

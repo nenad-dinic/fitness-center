@@ -7,7 +7,7 @@ using System.IO;
 
 namespace SR44_2020_POP2021
 {
-    public class DataCotroller
+    public class DataController
     {
         static DataTypes.FitnessCenter center;
 
@@ -41,6 +41,18 @@ namespace SR44_2020_POP2021
             File.WriteAllLines("users.txt", lines);
         }
 
+        public static void WriteAllTrainings()
+        {
+            List<string> lines = new List<string>();
+
+            foreach (DataTypes.Training t in trainings)
+            {
+                lines.Add(t.id + "," + t.date + "," + t.startTime + "," + t.duration + "," + t.isReserved + "," + t.trainer + "," + t.trainee);
+            }
+
+            File.WriteAllLines("trainings.txt", lines);
+        }
+
         public static void Init()
         {
             center = new DataTypes.FitnessCenter(0, "Genericki Fitnes Centar", new DataTypes.Address(0, "Ulica", "5", "Novi Sad", "Srbija"));
@@ -57,6 +69,40 @@ namespace SR44_2020_POP2021
 
             WriteAllUsers();
             WriteAllAddresses();
+        }
+
+        public static void CreateTraining(int id, DateTime date, TimeSpan startTime, int duration, bool isDeserved, DataTypes.User trainer, DataTypes.User trainee)
+        {
+            DataTypes.Training training = new DataTypes.Training(id, date, startTime, duration, isDeserved, trainer, trainee);
+            trainings.Add(training);
+            WriteAllTrainings();
+        }
+
+        public static int getLastUserId()
+        {
+            if (users.Count == 0)
+            {
+                return - 1;
+            }
+            return users[users.Count - 1].id;
+        }
+
+        public static int getLastAddressId()
+        {
+            if (addresses.Count == 0)
+            {
+                return - 1;
+            }
+            return addresses[addresses.Count - 1].id;
+        }
+
+        public static int getLastTrainingId()
+        {
+            if (trainings.Count == 0)
+            {
+                return - 1;
+            }
+            return trainings[trainings.Count - 1].id;
         }
     }
 

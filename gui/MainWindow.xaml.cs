@@ -24,6 +24,11 @@ namespace SR44_2020_POP2021.Gui
         {
             InitializeComponent();
             DataController.Init();
+            foreach (DataTypes.User u in DataController.users)
+            {
+                MessageBox.Show(u.name);
+                
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

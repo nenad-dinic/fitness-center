@@ -10,26 +10,33 @@ namespace SR44_2020_POP2021
     {
         public class Address
         {
-            public int id;
-            public string street;
-            public string houseNum;
-            public string city;
-            public string country;
-            public Address(int id, string street, string houseNum, string city, string country)
+            public int id { get; private set; }
+            public string street { get; private set; }
+            public string houseNum { get; private set; }
+            public string city { get; private set; }
+            public string country { get; private set; }
+            public bool isDeleted { get; private set; }
+            public Address(int id, string street, string houseNum, string city, string country, bool isDeleted)
             {
                 this.id = id;
                 this.street = street;
                 this.houseNum = houseNum;
                 this.city = city;
                 this.country = country;
+                this.isDeleted = isDeleted;
+            }
+
+            public void Delete()
+            {
+                isDeleted = true;
             }
         }
 
         public class FitnessCenter
         {
-            public int id;
-            public string name;
-            public Address address;
+            public int id { get; private set; }
+            public string name { get; private set; }
+            public Address address { get; private set; }
             public FitnessCenter(int id, string name, Address address)
             {
                 this.id = id;
@@ -50,17 +57,18 @@ namespace SR44_2020_POP2021
 
         public class User
         {
-            public int id;
-            public string name;
-            public string surname;
-            public string jmbg;
-            public Genders gender;
-            public Address address;
-            public string email;
-            public UserTypes userTypes;
-            public DateTime lockedUntil;
+            public int id { get; private set; }
+            public string name { get; private set; }
+            public string surname { get; private set; }
+            public string jmbg { get; private set; }
+            public Genders gender { get; private set; }
+            public Address address { get; private set; }
+            public string email { get; private set; }
+            public UserTypes userTypes { get; private set; }
+            public DateTime lockedUntil { get; private set; }
+            public bool isDeleted { get; private set; }
 
-            public User(int id, string name, string surname, string jmbg, Genders gender, Address address, string email, UserTypes userTypes, DateTime lockedUntil)
+            public User(int id, string name, string surname, string jmbg, Genders gender, Address address, string email, UserTypes userTypes, DateTime lockedUntil, bool isDeleted)
             {
                 this.id = id;
                 this.name = name;
@@ -71,20 +79,27 @@ namespace SR44_2020_POP2021
                 this.email = email;
                 this.userTypes = userTypes;
                 this.lockedUntil = lockedUntil;
+                this.isDeleted = isDeleted;
+            }
+
+            public void Delete()
+            {
+                isDeleted = true;
             }
         }
 
         public class Training
         {
-            public int id;
-            public DateTime date;
-            public TimeSpan startTime;
-            public int duration;
-            public bool isReserved;
-            public User trainer;
-            public User trainee;
+            public int id { get; private set; }
+            public DateTime date { get; private set; }
+            public TimeSpan startTime { get; private set; }
+            public int duration { get; private set; }
+            public bool isReserved { get; private set; }
+            public User trainer { get; private set; }
+            public User trainee { get; private set; }
+            public bool isDeleted { get; private set; }
 
-            public Training(int id, DateTime date, TimeSpan startTime, int duration, bool isReserved, DataTypes.User trainer, DataTypes.User trainee)
+            public Training(int id, DateTime date, TimeSpan startTime, int duration, bool isReserved, DataTypes.User trainer, DataTypes.User trainee, bool isDeleted)
             {
                 this.id = id;
                 this.date = date;
@@ -93,6 +108,12 @@ namespace SR44_2020_POP2021
                 this.isReserved = isReserved;
                 this.trainer = trainer;
                 this.trainee = trainee;
+                this.isDeleted = isDeleted;
+            }
+
+            public void Delete()
+            {
+                isDeleted = true;
             }
         }
     }

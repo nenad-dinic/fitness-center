@@ -50,10 +50,10 @@ namespace SR44_2020_POP2021.Gui
             string country = CountryField.Text;
             string email = EmailField.Text;
 
-            int lastUserId = DataController.getLastUserId();
-            int lastAddressId = DataController.getLastAddressId();
+            int lastUserId = DataController.GetLastUserId();
+            int lastAddressId = DataController.GetLastAddressId();
 
-            DataController.CreateUser(lastUserId + 1, name, surname, jmbg, gender, new DataTypes.Address(lastAddressId + 1, street, houseNum, city, country), email, DataTypes.UserTypes.trainee, new DateTime(0));
+            DataController.CreateUser(lastUserId + 1, name, surname, jmbg, gender, new DataTypes.Address(lastAddressId + 1, street, houseNum, city, country, false), email, DataTypes.UserTypes.trainee, new DateTime(0));
             
         }   
     }       

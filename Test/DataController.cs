@@ -154,12 +154,25 @@ namespace SR44_2020_POP2021
                 {
                     u.Delete();
                     u.address.Delete();
+                    WriteAllAddresses();
+                    WriteAllUsers();
                     return;
                 }
             }
         }
 
-
+        public static void DeleteTraining(int id)
+        {
+            foreach (DataTypes.Training t in trainings)
+            {
+                if (t.id == id)
+                {
+                    t.Delete();
+                    WriteAllTrainings();
+                    return;
+                }
+            }
+        }
 
         public static int GetLastUserId()
         {

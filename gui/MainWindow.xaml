@@ -9,7 +9,7 @@
     <Grid>
         <TextBox Height="23" Margin="10,103,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
         <TextBox x:Name="textBox1" Margin="10,142,10,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top" Text="TextBox" SpellCheck.IsEnabled="True"/>
-        <Button Content="Button" Margin="0,0,10,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="Button_Click"/>
+        <Button x:Name="DelBtn" Content="Brisanje korisnika" Margin="0,0,10,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="DelBtn_Click"/>
         <Button x:Name="RegBtn" Content="Registruj se" Margin="0,0,103,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="RegBtn_Click"/>
     </Grid>
 </Window>

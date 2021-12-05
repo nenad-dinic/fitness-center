@@ -26,14 +26,17 @@ namespace SR44_2020_POP2021.Gui
             DataController.Init();
             foreach (DataTypes.User u in DataController.users)
             {
-                MessageBox.Show(u.name);
-                
+                if (u.isDeleted == false)
+                {
+                    MessageBox.Show(u.name);
+                }
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void DelBtn_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Koj meseg hoces da pokazes!");
+            DeleteUserWindow delWin = new DeleteUserWindow();
+            delWin.Show();
         }
 
         private void RegBtn_Click(object sender, RoutedEventArgs e)

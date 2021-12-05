@@ -7,9 +7,10 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="355.835" Width="272.133">
     <Grid>
-        <TextBox Height="23" Margin="10,103,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
-        <TextBox x:Name="textBox1" Margin="10,142,10,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top" Text="TextBox" SpellCheck.IsEnabled="True"/>
-        <Button x:Name="DelBtn" Content="Brisanje korisnika" Margin="0,0,10,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="DelBtn_Click"/>
-        <Button x:Name="RegBtn" Content="Registruj se" Margin="0,0,103,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="RegBtn_Click"/>
+        <TextBox Height="23" Margin="10,54,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+        <TextBox x:Name="idField" Margin="10,255,10,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top" SpellCheck.IsEnabled="True"/>
+        <Button x:Name="DelBtn" Content="Brisanje korisnika" Margin="0,0,10,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="84" Click="DelBtn_Click"/>
+        <Button x:Name="RegBtn" Content="Registruj se" Margin="0,0,179,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="RegBtn_Click"/>
+        <Button x:Name="UpdateBtn" Content="Izmena korisnika" Margin="0,0,99,10" VerticalAlignment="Bottom" Click="UpdateBtn_Click" HorizontalAlignment="Right" Width="75"/>
     </Grid>
 </Window>

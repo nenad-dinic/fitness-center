@@ -146,6 +146,11 @@ namespace SR44_2020_POP2021
             WriteAllTrainings();
         }
 
+        public static void UpdateUser(int id, string name, string surname, string jmbg, DataTypes.Genders gender, DataTypes.Address address, string email, DataTypes.UserTypes userTypes, DateTime lockedUntil)
+        {
+
+        }
+
         public static void DeleteUser(int id)
         {
             foreach (DataTypes.User u in users)
@@ -201,7 +206,17 @@ namespace SR44_2020_POP2021
             return trainings[trainings.Count - 1].id;
         }
 
-        
+        public static DataTypes.User GetUserById(int id)
+        {
+            foreach (DataTypes.User u in users)
+            {
+                if (id == u.id)
+                {
+                    return u;
+                }
+            }
+            return null;
+        }
     }
 
 }

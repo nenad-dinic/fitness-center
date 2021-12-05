@@ -30,6 +30,14 @@ namespace SR44_2020_POP2021
             {
                 isDeleted = true;
             }
+
+            public void Update(string street, string houseNum, string city, string country)
+            {
+                this.street = street;
+                this.houseNum = houseNum;
+                this.city = city;
+                this.country = country;
+            }
         }
 
         public class FitnessCenter
@@ -80,6 +88,15 @@ namespace SR44_2020_POP2021
                 this.userTypes = userTypes;
                 this.lockedUntil = lockedUntil;
                 this.isDeleted = isDeleted;
+            }
+
+            public void Update(string name, string surname, string jmbg, DataTypes.Genders gender, string email)
+            {
+                this.name = name;
+                this.surname = surname;
+                this.jmbg = jmbg;
+                this.gender = gender;
+                this.email = email;
             }
 
             public void Delete()

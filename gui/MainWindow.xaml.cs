@@ -24,25 +24,27 @@ namespace SR44_2020_POP2021.Gui
         {
             InitializeComponent();
             DataController.Init();
-            foreach (DataTypes.User u in DataController.users)
-            {
-                if (u.isDeleted == false)
-                {
-                    MessageBox.Show(u.name);
-                }
-            }
+            
         }
 
         private void DelBtn_Click(object sender, RoutedEventArgs e)
         {
-            DeleteUserWindow delWin = new DeleteUserWindow();
-            delWin.Show();
+            int id = int.Parse(idField.Text);
+            DataController.DeleteUser(id);
+            MessageBox.Show("Uspesno obrisan!");
         }
 
         private void RegBtn_Click(object sender, RoutedEventArgs e)
         {
             RegisterWindow regWin = new RegisterWindow();
             regWin.Show();
+        }
+
+        private void UpdateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            int id = int.Parse(idField.Text);
+            UpdateWindow updateWin = new UpdateWindow(DataController.GetUserById(id));
+            updateWin.Show();
         }
     }
 }

@@ -69,32 +69,33 @@ namespace SR44_2020_POP2021
             public string name { get; private set; }
             public string surname { get; private set; }
             public string jmbg { get; private set; }
+            public string password {get; private set; }
             public Genders gender { get; private set; }
             public Address address { get; private set; }
             public string email { get; private set; }
             public UserTypes userTypes { get; private set; }
-            public DateTime lockedUntil { get; private set; }
             public bool isDeleted { get; private set; }
 
-            public User(int id, string name, string surname, string jmbg, Genders gender, Address address, string email, UserTypes userTypes, DateTime lockedUntil, bool isDeleted)
+            public User(int id, string name, string surname, string jmbg, string passwrod, Genders gender, Address address, string email, UserTypes userTypes, bool isDeleted)
             {
                 this.id = id;
                 this.name = name;
                 this.surname = surname;
                 this.jmbg = jmbg;
+                this.password = password;
                 this.gender = gender;
                 this.address = address;
                 this.email = email;
                 this.userTypes = userTypes;
-                this.lockedUntil = lockedUntil;
                 this.isDeleted = isDeleted;
             }
 
-            public void Update(string name, string surname, string jmbg, DataTypes.Genders gender, string email)
+            public void Update(string name, string surname, string jmbg, string password, DataTypes.Genders gender, string email)
             {
                 this.name = name;
                 this.surname = surname;
                 this.jmbg = jmbg;
+                this.password = password;
                 this.gender = gender;
                 this.email = email;
             }

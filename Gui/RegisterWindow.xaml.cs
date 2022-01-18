@@ -43,6 +43,7 @@ namespace SR44_2020_POP2021.Gui
             string name = NameField.Text;
             string surname = SurnameField.Text;
             string jmbg = JmbgField.Text;
+            string password = PassField.Text;
             DataTypes.Genders gender = (DataTypes.Genders) GenderField.SelectedIndex;
             string street = StreetField.Text;
             string houseNum = HouseNumField.Text;
@@ -50,10 +51,9 @@ namespace SR44_2020_POP2021.Gui
             string country = CountryField.Text;
             string email = EmailField.Text;
 
-            int lastUserId = DataController.GetLastUserId();
             int lastAddressId = DataController.GetLastAddressId();
 
-            DataController.CreateUser(lastUserId + 1, name, surname, jmbg, gender, new DataTypes.Address(lastAddressId + 1, street, houseNum, city, country, false), email, DataTypes.UserTypes.trainee, new DateTime(0));
+            DataController.CreateUser(name, surname, jmbg, password, gender, DataController.CreateAddress(street, houseNum, city, country, false), email, DataTypes.UserTypes.trainee, new DateTime(0));
             
         }   
     }       

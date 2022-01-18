@@ -27,6 +27,8 @@
         <TextBox x:Name="EmailField" Height="23" Margin="184,277,42,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Button x:Name="RegisterBtn" Content="Registruj se" Margin="0,0,90,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="RegisterBtn_Click"/>
         <Button x:Name="CancelBtn" Content="Otkazi" Margin="0,0,10,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="CancelBtn_Click"/>
+        <Label Content="Sifra:" HorizontalAlignment="Left" Margin="30,303,0,0" VerticalAlignment="Top" Width="87"/>
+        <TextBox x:Name="PassField" HorizontalAlignment="Left" Height="23" Margin="184,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>

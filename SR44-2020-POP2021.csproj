@@ -61,7 +61,7 @@
     <Compile Include="Gui\UpdateWindow.xaml.cs">
       <DependentUpon>UpdateWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Test\DataTypes.cs" />
+    <Compile Include="Misc\DataTypes.cs" />
     <Page Include="Gui\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -70,7 +70,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Test\DataController.cs" />
+    <Compile Include="Misc\DataController.cs" />
     <Compile Include="Gui\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -109,6 +109,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Files\addresses.txt" />
+    <Resource Include="Files\trainings.txt" />
+    <Resource Include="Files\users.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -27,24 +27,17 @@ namespace SR44_2020_POP2021.Gui
             
         }
 
-        /*private void DelBtn_Click(object sender, RoutedEventArgs e)
-        {
-            int id = int.Parse(idField.Text);
-            DataController.DeleteUser(id);
-            MessageBox.Show("Uspesno obrisan!");
-        }*/
-
         private void RegBtn_Click(object sender, RoutedEventArgs e)
         {
             RegisterWindow regWin = new RegisterWindow();
             regWin.Show();
         }
 
-        /*private void UpdateBtn_Click(object sender, RoutedEventArgs e)
-        {
-            int id = int.Parse(idField.Text);
-            UpdateWindow updateWin = new UpdateWindow(DataController.GetUserById(id));
-            updateWin.Show();
-        }*/
+        private void Login_Click(object sender, RoutedEventArgs e){
+            DataTypes.User trainee;
+            trainee = DataController.LoginUser(JmbgField.Text, PassField.Text);
+            MessageBox.Show(trainee.name);
+        }
+
     }
 }

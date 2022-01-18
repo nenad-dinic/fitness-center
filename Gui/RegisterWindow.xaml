@@ -7,28 +7,28 @@
         mc:Ignorable="d"
         Title="RegisterWindow" Height="462.295" Width="353.689" Loaded="Window_Loaded">
     <Grid>
-        <Label Content="Ime:" HorizontalAlignment="Left" Margin="30,33,0,0" VerticalAlignment="Top" Height="28" Width="104"/>
-        <TextBox x:Name="NameField" Height="23" Margin="184,38,42,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Label Content="Ime:" HorizontalAlignment="Left" Margin="30,38,0,0" VerticalAlignment="Top" Height="28" Width="104"/>
+        <TextBox x:Name="NameField" Height="23" Margin="184,38,42,0" TextWrapping="Wrap" VerticalAlignment="Top" TabIndex="1"/>
         <Label Content="Prezime:" HorizontalAlignment="Left" Margin="30,63,0,0" VerticalAlignment="Top" Width="69"/>
-        <TextBox x:Name="SurnameField" Height="23" Margin="184,66,42,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="SurnameField" Height="23" Margin="184,66,42,0" TextWrapping="Wrap" VerticalAlignment="Top" TabIndex="2"/>
         <Label Content="Jmbg:" HorizontalAlignment="Left" Margin="30,91,0,0" VerticalAlignment="Top" Width="69"/>
-        <TextBox x:Name="JmbgField" Height="23" Margin="184,94,42,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="JmbgField" Height="23" Margin="184,94,42,0" TextWrapping="Wrap" VerticalAlignment="Top" TabIndex="3"/>
         <Label Content="Pol:" HorizontalAlignment="Left" Margin="30,122,0,0" VerticalAlignment="Top" Width="87"/>
-        <ComboBox x:Name="GenderField" Margin="184,126,42,0" VerticalAlignment="Top"/>
-        <Label Content="Ulica:" HorizontalAlignment="Left" Margin="30,153,0,0" VerticalAlignment="Top" Width="60"/>
-        <Label Content="Drzava:" HorizontalAlignment="Left" Margin="30,246,0,0" VerticalAlignment="Top" Width="60"/>
-        <Label Content="Grad:" HorizontalAlignment="Left" Margin="30,215,0,0" VerticalAlignment="Top" Width="60"/>
-        <Label Content="Broj:" HorizontalAlignment="Left" Margin="30,184,0,0" VerticalAlignment="Top" Width="60"/>
-        <TextBox x:Name="StreetField" Height="23" Margin="184,153,42,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="CityField" Height="23" Margin="184,215,42,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="CountryField" Height="23" Margin="184,246,42,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="HouseNumField" Height="23" Margin="184,184,42,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Label Content="Email:" HorizontalAlignment="Left" Margin="30,277,0,0" VerticalAlignment="Top" Width="60"/>
-        <TextBox x:Name="EmailField" Height="23" Margin="184,277,42,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <Button x:Name="RegisterBtn" Content="Registruj se" Margin="0,0,90,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="RegisterBtn_Click"/>
-        <Button x:Name="CancelBtn" Content="Otkazi" Margin="0,0,10,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="CancelBtn_Click"/>
-        <Label Content="Sifra:" HorizontalAlignment="Left" Margin="30,303,0,0" VerticalAlignment="Top" Width="87"/>
-        <TextBox x:Name="PassField" HorizontalAlignment="Left" Height="23" Margin="184,307,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="GenderField" Margin="184,122,42,0" VerticalAlignment="Top" TabIndex="4"/>
+        <Label Content="Ulica:" HorizontalAlignment="Left" Margin="30,148,0,0" VerticalAlignment="Top" Width="60"/>
+        <Label Content="Drzava:" HorizontalAlignment="Left" Margin="30,231,0,0" VerticalAlignment="Top" Width="60"/>
+        <Label Content="Grad:" HorizontalAlignment="Left" Margin="30,205,0,0" VerticalAlignment="Top" Width="60"/>
+        <Label Content="Broj:" HorizontalAlignment="Left" Margin="30,177,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="StreetField" Height="23" Margin="184,149,42,0" TextWrapping="Wrap" VerticalAlignment="Top" TabIndex="5"/>
+        <TextBox x:Name="CityField" Height="23" Margin="184,205,42,0" TextWrapping="Wrap" VerticalAlignment="Top" TabIndex="7"/>
+        <TextBox x:Name="CountryField" Height="23" Margin="184,233,42,0" TextWrapping="Wrap" VerticalAlignment="Top" TabIndex="8"/>
+        <TextBox x:Name="HouseNumField" Height="23" Margin="184,177,42,0" TextWrapping="Wrap" VerticalAlignment="Top" TabIndex="6"/>
+        <Label Content="Email:" HorizontalAlignment="Left" Margin="30,261,0,0" VerticalAlignment="Top" Width="60"/>
+        <TextBox x:Name="EmailField" Height="23" Margin="184,261,42,0" TextWrapping="Wrap" VerticalAlignment="Top" TabIndex="9"/>
+        <Button x:Name="RegisterBtn" Content="Registruj se" Margin="0,0,90,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="RegisterBtn_Click" TabIndex="12"/>
+        <Button x:Name="CancelBtn" Content="Otkazi" Margin="0,0,10,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="CancelBtn_Click" TabIndex="13"/>
+        <Label Content="Sifra:" HorizontalAlignment="Left" Margin="30,289,0,0" VerticalAlignment="Top" Width="87"/>
+        <TextBox x:Name="PassField" Height="23" Margin="184,289,42,0" TextWrapping="Wrap" VerticalAlignment="Top" TabIndex="11"/>
 
     </Grid>
 </Window>

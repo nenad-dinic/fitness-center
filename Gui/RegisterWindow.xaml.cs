@@ -53,8 +53,11 @@ namespace SR44_2020_POP2021.Gui
 
             int lastAddressId = DataController.GetLastAddressId();
 
-            DataController.CreateUser(name, surname, jmbg, password, gender, DataController.CreateAddress(street, houseNum, city, country, false), email, DataTypes.UserTypes.trainee, new DateTime(0));
+            DataTypes.Address address =  DataController.CreateAddress(street, houseNum, city, country, false);
+            DataController.CreateUser(name, surname, jmbg, password, gender, address, email, DataTypes.UserTypes.trainee, new DateTime(0));
             
+            MessageBox.Show("Registracija uspesna!");
+            this.Close();
         }   
     }       
 }

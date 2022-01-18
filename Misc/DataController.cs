@@ -57,7 +57,7 @@ namespace SR44_2020_POP2021
 
             foreach (DataTypes.User u in users)
             {
-                lines.Add(u.id + "," + u.name + "," + u.surname + "," + u.jmbg + "," + u.gender + "," + u.address.id + "," + u.email + "," + u.userTypes + "," + u.isDeleted);
+                lines.Add(u.id + "," + u.name + "," + u.surname + "," + u.jmbg + "," + u.password + "," + u.gender + "," + u.address.id + "," + u.email + "," + u.userTypes + "," + u.isDeleted);
             }
 
             File.WriteAllLines(filePath + "users.txt", lines);
@@ -173,16 +173,47 @@ namespace SR44_2020_POP2021
             return training;
         }
 
-        public static void UpdateUser(int id, string name, string surname, string jmbg, DataTypes.Genders gender, DataTypes.Address address, string email, DataTypes.UserTypes userTypes, DateTime lockedUntil)
+        public static bool UpdateUser(int id, string name, string surname, string jmbg, string password, DataTypes.Genders gender, string email)
         {
-            //Dodati update za user
+            DataTypes.User user = GetUserById(id);
+            if(user == null){
+                return false;
+            }
+
+            user.Update(name, surname, jmbg, password, gender, email);
+
+            WriteAllUsers();
+            return true;
         }
 
-        public static void UpdateAddress(){
-            //Dodati update za adresu
+        public static bool UpdateAddress(int id, string street, string houseNum, string city, string country){
+            DataTypes.Address address = GetAddressById(id);
+
+            if(address == null){
+                return false;
+            }
+
+            address.Update(street, houseNum, city, country);
+
+            WriteAllAddresses();
+            return true;
         }
 
-        public static void DeleteUser(int id)
+        public static bool UpdateTraining(int id, DateTime date, TimeSpan startTime, int duration, bool isReserved, DataTypes.User trainer, DataTypes.User trainee){
+            DataTypes.Training training = GetTrainingById(id);
+
+            if(training == null){
+                return false;
+            }
+
+            training.Update(date, startTime, duration, isReserved, trainer, trainee);
+
+
+            WriteAllTrainings();
+            return true;
+        }
+
+        public static bool DeleteUser(int id)
         {
             foreach (DataTypes.User u in users)
             {
@@ -191,12 +222,13 @@ namespace SR44_2020_POP2021
                     u.Delete();
                     DeleteAddress(u.address.id);
                     WriteAllUsers();
-                    return;
+                    return true;
                 }
             }
+            return false;
         }
 
-        public static void DeleteTraining(int id)
+        public static bool DeleteTraining(int id)
         {
             foreach (DataTypes.Training t in trainings)
             {
@@ -204,21 +236,23 @@ namespace SR44_2020_POP2021
                 {
                     t.Delete();
                     WriteAllTrainings();
-                    return;
+                    return true;
                 }
             }
+            return false;
         }
 
-        public static void DeleteAddress(int id){
+        public static bool DeleteAddress(int id){
             foreach (DataTypes.Address a in addresses)
             {
                 if (a.id == id)
                 {
                     a.Delete();
                     WriteAllAddresses();
-                    return;
+                    return true;
                 }
             }
+            return false;
         }
 
         public static int GetLastUserId()
@@ -282,9 +316,9 @@ namespace SR44_2020_POP2021
             return null;
         }
 
-        public static DataTypes.User LoginUser(string jmbg){
+        public static DataTypes.User LoginUser(string jmbg, string password){
             foreach(DataTypes.User u in users){
-                if (u.jmbg == jmbg){
+                if (u.jmbg == jmbg && u.password == password){
                     return u;
                 }
             }

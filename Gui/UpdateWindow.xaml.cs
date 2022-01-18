@@ -78,13 +78,8 @@ namespace SR44_2020_POP2021.Gui
             string country = CountryField.Text;
             string email = EmailField.Text;
 
-            // DataController.UpdateUser();
-            // DataController.UpdateAddress();
-
-            /* user.Update(name, surname, jmbg, password, gender, email);
-            user.address.Update(street, houseNum, city, country);
-            DataController.WriteAllUsers();
-            DataController.WriteAllAddresses(); */
+            DataController.UpdateUser(user.id, name, surname, jmbg, password, gender, email);
+            DataController.UpdateAddress(user.address.id, street, houseNum, city, country);
         }
 
         private void CancelBtn_Click(object sender, RoutedEventArgs e)

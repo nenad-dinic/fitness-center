@@ -76,7 +76,7 @@ namespace SR44_2020_POP2021
             public UserTypes userTypes { get; private set; }
             public bool isDeleted { get; private set; }
 
-            public User(int id, string name, string surname, string jmbg, string passwrod, Genders gender, Address address, string email, UserTypes userTypes, bool isDeleted)
+            public User(int id, string name, string surname, string jmbg, string password, Genders gender, Address address, string email, UserTypes userTypes, bool isDeleted)
             {
                 this.id = id;
                 this.name = name;
@@ -127,6 +127,15 @@ namespace SR44_2020_POP2021
                 this.trainer = trainer;
                 this.trainee = trainee;
                 this.isDeleted = isDeleted;
+            }
+
+            public void Update(DateTime date, TimeSpan startTime, int duration, bool isReserved, User trainer, User trainee){
+                this.date = date;
+                this.startTime = startTime;
+                this.duration = duration;
+                this.isReserved = isReserved;
+                this.trainer = trainer;
+                this.trainee = trainee;
             }
 
             public void Delete()

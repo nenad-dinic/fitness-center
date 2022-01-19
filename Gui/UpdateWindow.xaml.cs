@@ -31,15 +31,14 @@ namespace SR44_2020_POP2021.Gui
             GenderField.SelectedIndex = 0;
 
             this.user = user;
-            LoadData();
-            /*if (ValidateUser())
+            if (ValidateUser())
             {
                 LoadData();
             } 
             else
             {
                 this.Close();
-            }*/
+            }
         }
 
         private bool ValidateUser()
@@ -57,6 +56,7 @@ namespace SR44_2020_POP2021.Gui
             NameField.Text = user.name;
             SurnameField.Text = user.surname;
             JmbgField.Text = user.jmbg;
+            PassField.Text = user.password;
             GenderField.SelectedIndex = (int)user.gender;
             StreetField.Text = user.address.street;
             HouseNumField.Text = user.address.houseNum;
@@ -77,7 +77,7 @@ namespace SR44_2020_POP2021.Gui
             string city = CityField.Text;
             string country = CountryField.Text;
             string email = EmailField.Text;
-
+   
             DataController.UpdateUser(user.id, name, surname, jmbg, password, gender, email);
             DataController.UpdateAddress(user.address.id, street, houseNum, city, country);
         }

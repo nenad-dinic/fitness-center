@@ -34,9 +34,14 @@ namespace SR44_2020_POP2021.Gui
         }
 
         private void Login_Click(object sender, RoutedEventArgs e){
-            DataTypes.User trainee;
-            trainee = DataController.LoginUser(JmbgField.Text, PassField.Text);
-            MessageBox.Show(trainee.name);
+            DataTypes.User user;
+            user = DataController.LoginUser(JmbgField.Text, PassField.Text);
+            if(user.userTypes == DataTypes.UserTypes.trainee)
+            {
+                TraineeWindow window = new TraineeWindow(user, this);
+                window.Show();
+            }
+            this.Hide();
         }
 
     }

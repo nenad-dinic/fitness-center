@@ -55,5 +55,10 @@ namespace SR44_2020_POP2021.Gui
                 updateWindow.Close();
             }
         }
+
+        private void LogOutBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

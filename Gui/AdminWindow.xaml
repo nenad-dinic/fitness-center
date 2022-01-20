@@ -12,7 +12,7 @@
         <Button x:Name="ViewAndEditTrainingBtn" Content="Prikazi i izmeni treninge" Margin="10,100,0,0" VerticalAlignment="Top" Height="54" HorizontalAlignment="Left" Width="200"/>
         <Button x:Name="CreateTrainerBtn" Content="Napravi novog instruktora" Margin="0,100,10,0" VerticalAlignment="Top" Height="54" HorizontalAlignment="Right" Width="200" Click="CreateTrainerBtn_Click"/>
         <Button x:Name="CreatTrainingBtn" Content="Kreiraj trening" HorizontalAlignment="Left" Height="54" Margin="10,159,0,0" VerticalAlignment="Top" Width="200"/>
-        <Button x:Name="LogOutBtn" Content="Odjava" Margin="0,159,10,0" VerticalAlignment="Top" Height="54" HorizontalAlignment="Right" Width="200"/>
+        <Button x:Name="LogOutBtn" Content="Odjava" Margin="0,159,10,0" VerticalAlignment="Top" Height="54" HorizontalAlignment="Right" Width="200" Click="LogOutBtn_Click"/>
         <Button x:Name="ViewAndEditDataBtn" Content="Pregled i izmena licnih podataka" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Height="54" Width="200" Click="ViewAndEditDataBtn_Click"/>
 
     </Grid>

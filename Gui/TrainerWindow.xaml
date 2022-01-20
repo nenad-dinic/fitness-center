@@ -9,7 +9,7 @@
     <Grid Margin="0,0,0,-6">
         <Label x:Name="WelcomeLabel" Content="test" Margin="10,10,10,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
         <Button x:Name="ViewTrainingBtn" Content="Prikazi treninge" Margin="0,41,10,0" VerticalAlignment="Top" Height="62" HorizontalAlignment="Right" Width="200"/>
-        <Button x:Name="LogOutBtn" Content="Odjava" Margin="0,108,0,0" VerticalAlignment="Top" Height="62" HorizontalAlignment="Center" Width="200"/>
+        <Button x:Name="LogOutBtn" Content="Odjava" Margin="0,108,0,0" VerticalAlignment="Top" Height="62" HorizontalAlignment="Center" Width="200" Click="LogOutBtn_Click"/>
         <Button x:Name="ViewAndEditDataBtn" Content="Pregled i izmena licnih podataka" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Height="62" Width="200" Click="ViewAndEditDataBtn_Click"/>
 
     </Grid>

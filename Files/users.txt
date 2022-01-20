@@ -1,1 +1,3 @@
 0,tes,testic,12312,test,male,0,sda@dsa,trainee,False
+1,Nenad,Dinic,0806001,admin,male,1,dinic.sr44.2020@uns.ac.rs,admin,False
+2,Trener,treneric,32121,trener,male,2,trener@gmail.com,trainer,False

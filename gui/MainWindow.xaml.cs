@@ -36,11 +36,30 @@ namespace SR44_2020_POP2021.Gui
         private void Login_Click(object sender, RoutedEventArgs e){
             DataTypes.User user;
             user = DataController.LoginUser(JmbgField.Text, PassField.Text);
+            if(user == null)
+            {
+                MessageBox.Show("Uneli ste pogresan JMBG ili sifru");
+                return;
+            }
+
+            Window window = null;
             if(user.userTypes == DataTypes.UserTypes.trainee)
             {
-                TraineeWindow window = new TraineeWindow(user, this);
-                window.Show();
+                window = new TraineeWindow(user);
+            }else if(user.userTypes == DataTypes.UserTypes.admin)
+            {
+                window = new AdminWindow(user);
+            } else if (user.userTypes == DataTypes.UserTypes.trainer)
+            {
+                window = new TrainerWindow(user);
             }
+
+            window.Show();
+            window.Closing += delegate {
+                JmbgField.Text = "";
+                PassField.Text = "";
+                this.Show(); 
+            };
             this.Hide();
         }
 

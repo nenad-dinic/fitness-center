@@ -21,13 +21,11 @@ namespace SR44_2020_POP2021.Gui
     {
 
         DataTypes.User user;
-        MainWindow loginWindow;
     
-        public TraineeWindow(DataTypes.User user, MainWindow loginWindow)
+        public TraineeWindow(DataTypes.User user)
         {
             InitializeComponent();
             this.user = user;
-            this.loginWindow = loginWindow;
             showInfo();
         }
 
@@ -58,13 +56,36 @@ namespace SR44_2020_POP2021.Gui
 
         }
 
+
+        ViewTrainers viewTrainersWindow = null;
+
+        private void ViewTrainerBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (viewTrainersWindow == null)
+            {
+                viewTrainersWindow = new ViewTrainers();
+                viewTrainersWindow.Show();
+                viewTrainersWindow.Closing += delegate { viewTrainersWindow = null; };
+            }
+            else
+            {
+                viewTrainersWindow.Focus();
+            }
+        }
+
         private void Window_Closed(object sender, EventArgs e)
         {
-            loginWindow.Show();
             if(updateWindow != null)
             {
                 updateWindow.Close();
             }
+            
+            if(viewTrainersWindow != null)
+            {
+                viewTrainersWindow.Close();
+            }
+
         }
+
     }
 }

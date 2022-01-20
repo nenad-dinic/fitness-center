@@ -325,6 +325,20 @@ namespace SR44_2020_POP2021
             return null;
         }
 
+        public static List<DataTypes.User> GetAllTrainers()
+        {
+            List<DataTypes.User> usr = new List<DataTypes.User>();
+
+            foreach(DataTypes.User u in users)
+            {
+                if(u.userTypes == DataTypes.UserTypes.trainer)
+                {
+                    usr.Add(u);
+                }
+            }
+            return usr;
+        }
+
     }
 
 }

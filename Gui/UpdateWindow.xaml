@@ -22,7 +22,7 @@
         <TextBox x:Name="CityField" Margin="155,246,10,0" TextWrapping="Wrap" Text="TextBox" Height="23" VerticalAlignment="Top"/>
         <TextBox x:Name="StreetField" Margin="155,188,10,0" TextWrapping="Wrap" Text="TextBox" Height="23" VerticalAlignment="Top"/>
         <TextBox x:Name="HouseNumField" Margin="155,217,10,0" TextWrapping="Wrap" Text="TextBox" Height="23" VerticalAlignment="Top"/>
-        <TextBox x:Name="JmbgField" Margin="155,130,10,0" TextWrapping="Wrap" Text="TextBox" Height="23" VerticalAlignment="Top"/>
+        <TextBox x:Name="JmbgField" Margin="155,130,10,0" TextWrapping="Wrap" Text="TextBox" Height="23" VerticalAlignment="Top" IsEnabled="False"/>
         <TextBox x:Name="SurnameField" Margin="155,101,10,0" TextWrapping="Wrap" Text="TextBox" Height="23" VerticalAlignment="Top"/>
         <ComboBox x:Name="GenderField" HorizontalAlignment="Left" Margin="155,158,0,0" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="CancelBtn" Content="Otkazi" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="75" Click="CancelBtn_Click"/>

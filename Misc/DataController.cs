@@ -150,7 +150,7 @@ namespace SR44_2020_POP2021
             }
         }
 
-        public static DataTypes.User CreateUser(string name, string surname, string jmbg, string password, DataTypes.Genders gender, DataTypes.Address address, string email, DataTypes.UserTypes userTypes, DateTime lockedUntil)
+        public static DataTypes.User CreateUser(string name, string surname, string jmbg, string password, DataTypes.Genders gender, DataTypes.Address address, string email, DataTypes.UserTypes userTypes)
         {
             DataTypes.User user = new DataTypes.User(GetLastUserId() + 1, name, surname, jmbg, password, gender, address, email, userTypes, false);
             users.Add(user);

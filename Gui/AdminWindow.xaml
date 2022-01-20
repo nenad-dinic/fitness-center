@@ -5,14 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SR44_2020_POP2021.Gui"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="371" Width="362">
+        Title="AdminWindow" Height="298" Width="443" Closed="Window_Closed">
     <Grid>
-        <Label Content="test" Margin="10,10,10,0" VerticalAlignment="Top"/>
-        <Button x:Name="ViewAndEditUsersBtn" Content="Prikazi i izmeni korisnike" Margin="10,41,193,0" VerticalAlignment="Top" Height="54"/>
-        <Button x:Name="ViewAndEditTrainingBtn" Content="Prikazi i izmeni treninge" Margin="193,41,10,0" VerticalAlignment="Top" Height="54"/>
-        <Button x:Name="CreateTrainerBtn" Content="Napravi novog instruktora" Margin="10,100,193,0" VerticalAlignment="Top" Height="54"/>
-        <Button x:Name="CreatTrainingBtn" Content="Kreiraj trening" HorizontalAlignment="Left" Height="54" Margin="193,100,0,0" VerticalAlignment="Top" Width="159"/>
-        <Button x:Name="LogOutBtn" Content="Odjava" Margin="102,159,102,0" VerticalAlignment="Top" Height="54"/>
+        <Label x:Name="WelcomeLabel" Content="test" Margin="10,10,10,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+        <Button x:Name="ViewAndEditUsersBtn" Content="Prikazi i izmeni korisnike" Margin="0,41,10,0" VerticalAlignment="Top" Height="54" HorizontalAlignment="Right" Width="200"/>
+        <Button x:Name="ViewAndEditTrainingBtn" Content="Prikazi i izmeni treninge" Margin="10,100,0,0" VerticalAlignment="Top" Height="54" HorizontalAlignment="Left" Width="200"/>
+        <Button x:Name="CreateTrainerBtn" Content="Napravi novog instruktora" Margin="0,100,10,0" VerticalAlignment="Top" Height="54" HorizontalAlignment="Right" Width="200" Click="CreateTrainerBtn_Click"/>
+        <Button x:Name="CreatTrainingBtn" Content="Kreiraj trening" HorizontalAlignment="Left" Height="54" Margin="10,159,0,0" VerticalAlignment="Top" Width="200"/>
+        <Button x:Name="LogOutBtn" Content="Odjava" Margin="0,159,10,0" VerticalAlignment="Top" Height="54" HorizontalAlignment="Right" Width="200"/>
+        <Button x:Name="ViewAndEditDataBtn" Content="Pregled i izmena licnih podataka" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Height="54" Width="200" Click="ViewAndEditDataBtn_Click"/>
 
     </Grid>
 </Window>

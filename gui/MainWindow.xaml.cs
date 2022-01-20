@@ -27,10 +27,20 @@ namespace SR44_2020_POP2021.Gui
             
         }
 
+        RegisterWindow registerWindow = null;
+
         private void RegBtn_Click(object sender, RoutedEventArgs e)
         {
-            RegisterWindow regWin = new RegisterWindow();
-            regWin.Show();
+            if (registerWindow == null)
+            {
+                registerWindow = new RegisterWindow(DataTypes.UserTypes.trainee);
+                registerWindow.Closing += delegate { registerWindow = null; };
+                registerWindow.Show();
+            }
+            else
+            {
+                registerWindow.Focus();
+            }
         }
 
         private void Login_Click(object sender, RoutedEventArgs e){
@@ -63,5 +73,12 @@ namespace SR44_2020_POP2021.Gui
             this.Hide();
         }
 
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            if(registerWindow != null)
+            {
+                registerWindow.Close();
+            }
+        }
     }
 }

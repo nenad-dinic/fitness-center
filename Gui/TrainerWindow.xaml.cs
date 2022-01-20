@@ -24,6 +24,36 @@ namespace SR44_2020_POP2021.Gui
         {
             InitializeComponent();
             this.user = user;
+            showInfo();
+        }
+
+        void showInfo()
+        {
+            WelcomeLabel.Content = user.name + " " + user.surname;
+        }
+
+        UpdateWindow updateWindow = null;
+
+        private void ViewAndEditDataBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (updateWindow == null)
+            {
+                updateWindow = new UpdateWindow(user);
+                updateWindow.Closing += delegate { updateWindow = null; };
+                updateWindow.Show();
+            }
+            else
+            {
+                updateWindow.Focus();
+            }
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            if (updateWindow != null)
+            {
+                updateWindow.Close();
+            }
         }
     }
 }

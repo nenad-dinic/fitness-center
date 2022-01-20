@@ -20,9 +20,11 @@ namespace SR44_2020_POP2021.Gui
     /// </summary>
     public partial class RegisterWindow : Window
     {
-        public RegisterWindow()
+        DataTypes.UserTypes userType;
+        public RegisterWindow(DataTypes.UserTypes userType)
         {
             InitializeComponent();
+            this.userType = userType;
         }
 
         private void CancelBtn_Click(object sender, RoutedEventArgs e)
@@ -54,7 +56,7 @@ namespace SR44_2020_POP2021.Gui
             int lastAddressId = DataController.GetLastAddressId();
 
             DataTypes.Address address =  DataController.CreateAddress(street, houseNum, city, country, false);
-            DataController.CreateUser(name, surname, jmbg, password, gender, address, email, DataTypes.UserTypes.trainee, new DateTime(0));
+            DataController.CreateUser(name, surname, jmbg, password, gender, address, email, userType);
             
             MessageBox.Show("Registracija uspesna!");
             this.Close();

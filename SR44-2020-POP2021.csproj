@@ -73,6 +73,9 @@
     <Compile Include="Gui\ViewTrainers.xaml.cs">
       <DependentUpon>ViewTrainers.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gui\ViewUsersWindow.xaml.cs">
+      <DependentUpon>ViewUsersWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Misc\DataTypes.cs" />
     <Page Include="Gui\AdminWindow.xaml">
       <SubType>Designer</SubType>
@@ -108,6 +111,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Gui\ViewTrainers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gui\ViewUsersWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

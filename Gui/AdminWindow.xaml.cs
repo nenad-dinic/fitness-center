@@ -48,16 +48,18 @@ namespace SR44_2020_POP2021.Gui
             }
         }
 
-        private void Window_Closed(object sender, EventArgs e)
+        ViewUsersWindow viewUsersWindow = null;
+        private void ViewAndEditUsersBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (updateWindow != null)
+            if(viewUsersWindow == null)
             {
-                updateWindow.Close();
+                viewUsersWindow = new ViewUsersWindow();
+                viewUsersWindow.Closing += delegate { viewUsersWindow = null; };
+                viewUsersWindow.Show();
             }
-
-            if(registerWindow != null)
+            else
             {
-                registerWindow.Close();
+                viewUsersWindow.Focus();
             }
         }
 
@@ -81,5 +83,25 @@ namespace SR44_2020_POP2021.Gui
         {
             this.Close();
         }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            if (updateWindow != null)
+            {
+                updateWindow.Close();
+            }
+
+            if (registerWindow != null)
+            {
+                registerWindow.Close();
+            }
+
+            if(viewUsersWindow != null)
+            {
+                viewUsersWindow.Close();
+            }
+
+        }
+
     }
 }

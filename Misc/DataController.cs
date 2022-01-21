@@ -318,7 +318,7 @@ namespace SR44_2020_POP2021
 
         public static DataTypes.User LoginUser(string jmbg, string password){
             foreach(DataTypes.User u in users){
-                if (u.jmbg == jmbg && u.password == password){
+                if (u.jmbg == jmbg && u.password == password && u.isDeleted == false){
                     return u;
                 }
             }
@@ -327,16 +327,29 @@ namespace SR44_2020_POP2021
 
         public static List<DataTypes.User> GetAllTrainers()
         {
-            List<DataTypes.User> usr = new List<DataTypes.User>();
+            List<DataTypes.User> users = new List<DataTypes.User>();
 
-            foreach(DataTypes.User u in users)
+            foreach(DataTypes.User u in DataController.users)
             {
-                if(u.userTypes == DataTypes.UserTypes.trainer)
+                if(u.userTypes == DataTypes.UserTypes.trainer && u.isDeleted == false)
                 {
-                    usr.Add(u);
+                    users.Add(u);
                 }
             }
-            return usr;
+            return users;
+        }
+
+        public static List<DataTypes.User> GetAllUsers()
+        {
+            List<DataTypes.User> users = new List<DataTypes.User>();
+            foreach(DataTypes.User u in DataController.users)
+            {
+                if(u.isDeleted == false)
+                {
+                    users.Add(u);
+                }
+            }
+            return users;
         }
 
     }

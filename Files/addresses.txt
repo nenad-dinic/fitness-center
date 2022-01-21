@@ -1,3 +1,4 @@
-0,sdda,4,sda,sda,False
+0,sdda,4,sda,sda,True
 1,Morkanjca,5,Pozarevac,Srbija,False
 2,Trenerska,4,Novi Sad,Srbija,False
+3,Markovicska,2,Novi Sad,Srbija,False

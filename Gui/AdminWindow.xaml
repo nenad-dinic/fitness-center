@@ -8,7 +8,7 @@
         Title="AdminWindow" Height="298" Width="443" Closed="Window_Closed">
     <Grid>
         <Label x:Name="WelcomeLabel" Content="test" Margin="10,10,10,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
-        <Button x:Name="ViewAndEditUsersBtn" Content="Prikazi i izmeni korisnike" Margin="0,41,10,0" VerticalAlignment="Top" Height="54" HorizontalAlignment="Right" Width="200"/>
+        <Button x:Name="ViewAndEditUsersBtn" Content="Prikazi i izmeni korisnike" Margin="0,41,10,0" VerticalAlignment="Top" Height="54" HorizontalAlignment="Right" Width="200" Click="ViewAndEditUsersBtn_Click"/>
         <Button x:Name="ViewAndEditTrainingBtn" Content="Prikazi i izmeni treninge" Margin="10,100,0,0" VerticalAlignment="Top" Height="54" HorizontalAlignment="Left" Width="200"/>
         <Button x:Name="CreateTrainerBtn" Content="Napravi novog instruktora" Margin="0,100,10,0" VerticalAlignment="Top" Height="54" HorizontalAlignment="Right" Width="200" Click="CreateTrainerBtn_Click"/>
         <Button x:Name="CreatTrainingBtn" Content="Kreiraj trening" HorizontalAlignment="Left" Height="54" Margin="10,159,0,0" VerticalAlignment="Top" Width="200"/>

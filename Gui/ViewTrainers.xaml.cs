@@ -20,7 +20,7 @@ namespace SR44_2020_POP2021.Gui
     public partial class ViewTrainers : Window
     {
 
-        class Item{
+        class Row{
             public int id { get; set; }
             public string name { get; set; }
             public string surname { get; set; }
@@ -38,11 +38,12 @@ namespace SR44_2020_POP2021.Gui
 
         void ShowTrainers()
         {
+            TrainerTable.Items.Clear();
             List<DataTypes.User> trainers = DataController.GetAllTrainers();
             foreach (DataTypes.User trainer in trainers)
             {
                 string address = trainer.address.street + " " + trainer.address.houseNum + ", " + trainer.address.city + ", " + trainer.address.country;
-                TrainerTable.Items.Add(new Item() { id = trainer.id, name = trainer.name, surname = trainer.surname, address = address, email = trainer.email });
+                TrainerTable.Items.Add(new Row() { id = trainer.id, name = trainer.name, surname = trainer.surname, address = address, email = trainer.email });
             }
         }
 

@@ -17,7 +17,7 @@ namespace SR44_2020_POP2021.Gui
     /// <summary>
     /// Interaction logic for ViewTrainers.xaml
     /// </summary>
-    public partial class ViewTrainers : Window
+    public partial class ViewTrainersWindow : Window
     {
 
         class Row{
@@ -28,10 +28,12 @@ namespace SR44_2020_POP2021.Gui
             public string email { get; set; }
         }
 
-        public ViewTrainers()
+        DataTypes.User user;
+
+        public ViewTrainersWindow(DataTypes.User user)
         {
             InitializeComponent();
-            //TrainerTable.Columns[0].Visibility = Visibility.Hidden;
+            this.user = user;
 
             ShowTrainers();
         }
@@ -44,6 +46,24 @@ namespace SR44_2020_POP2021.Gui
             {
                 string address = trainer.address.street + " " + trainer.address.houseNum + ", " + trainer.address.city + ", " + trainer.address.country;
                 TrainerTable.Items.Add(new Row() { id = trainer.id, name = trainer.name, surname = trainer.surname, address = address, email = trainer.email });
+            }
+        }
+
+
+        ViewTrainingsWindow viewTrainingsWindow = null; 
+        public void ViewTrainingsBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Row row = (Row)((Button)e.OriginalSource).DataContext;
+            DataTypes.User trainer = DataController.GetUserById(row.id);
+            if(viewTrainingsWindow == null)
+            {
+                viewTrainingsWindow = new ViewTrainingsWindow(user, trainer);
+                viewTrainingsWindow.Closed += delegate { this.viewTrainingsWindow = null; };
+                viewTrainingsWindow.Show();
+            }
+            else
+            {
+                viewTrainingsWindow.Focus();
             }
         }
 

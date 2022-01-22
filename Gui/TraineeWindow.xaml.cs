@@ -57,13 +57,13 @@ namespace SR44_2020_POP2021.Gui
         }
 
 
-        ViewTrainers viewTrainersWindow = null;
+        ViewTrainersWindow viewTrainersWindow = null;
 
         private void ViewTrainerBtn_Click(object sender, RoutedEventArgs e)
         {
             if (viewTrainersWindow == null)
             {
-                viewTrainersWindow = new ViewTrainers();
+                viewTrainersWindow = new ViewTrainersWindow(user);
                 viewTrainersWindow.Show();
                 viewTrainersWindow.Closing += delegate { viewTrainersWindow = null; };
             }

@@ -84,6 +84,37 @@ namespace SR44_2020_POP2021.Gui
             this.Close();
         }
 
+        ViewTrainingsWindow viewTrainingsWindow = null;
+
+        private void ViewAndEditTrainingBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(viewTrainingsWindow == null)
+            {
+                viewTrainingsWindow = new ViewTrainingsWindow(user, null);
+                viewTrainingsWindow.Closed += delegate { viewTrainingsWindow = null; };
+                viewTrainingsWindow.Show();
+            }
+            else
+            {
+                viewTrainingsWindow.Focus();
+            }
+        }
+
+        CreateTrainingWindow createTrainingWindow = null;
+        private void CreatTrainingBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(createTrainingWindow == null)
+            {
+                createTrainingWindow = new CreateTrainingWindow(null);
+                createTrainingWindow.Closed += delegate { createTrainingWindow = null; };
+                createTrainingWindow.Show();
+            }
+            else
+            {
+                createTrainingWindow.Focus();
+            }
+        }
+
         private void Window_Closed(object sender, EventArgs e)
         {
             if (updateWindow != null)
@@ -101,7 +132,11 @@ namespace SR44_2020_POP2021.Gui
                 viewUsersWindow.Close();
             }
 
-        }
+            if(createTrainingWindow != null)
+            {
+                createTrainingWindow.Close();
+            }
 
+        }
     }
 }

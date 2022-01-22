@@ -54,11 +54,32 @@ namespace SR44_2020_POP2021.Gui
             {
                 updateWindow.Close();
             }
+
+            if(viewTrainingsWindow != null)
+            {
+                viewTrainingsWindow.Close();
+            }
+
         }
 
         private void LogOutBtn_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        ViewTrainingsWindow viewTrainingsWindow = null;
+        private void ViewTrainingBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(viewTrainingsWindow == null)
+            {
+                viewTrainingsWindow = new ViewTrainingsWindow(user, user);
+                viewTrainingsWindow.Closed += delegate { viewTrainingsWindow = null; };
+                viewTrainingsWindow.Show();
+            }
+            else
+            {
+                viewTrainingsWindow.Focus();
+            }
         }
     }
 }

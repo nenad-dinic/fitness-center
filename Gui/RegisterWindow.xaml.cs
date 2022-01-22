@@ -25,6 +25,13 @@ namespace SR44_2020_POP2021.Gui
         {
             InitializeComponent();
             this.userType = userType;
+
+            if(userType == DataTypes.UserTypes.trainer)
+            {
+                this.Title = "Dodaj Trenera";
+                RegisterBtn.Content = "Dodaj";
+            }
+
         }
 
         private void CancelBtn_Click(object sender, RoutedEventArgs e)

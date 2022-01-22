@@ -58,6 +58,9 @@
     <Compile Include="Gui\AdminWindow.xaml.cs">
       <DependentUpon>AdminWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gui\CreateTrainingWindow.xaml.cs">
+      <DependentUpon>CreateTrainingWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gui\RegisterWindow.xaml.cs">
       <DependentUpon>RegisterWindow.xaml</DependentUpon>
     </Compile>
@@ -70,14 +73,21 @@
     <Compile Include="Gui\UpdateWindow.xaml.cs">
       <DependentUpon>UpdateWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gui\ViewTrainers.xaml.cs">
-      <DependentUpon>ViewTrainers.xaml</DependentUpon>
+    <Compile Include="Gui\ViewTrainersWindow.xaml.cs">
+      <DependentUpon>ViewTrainersWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\ViewTrainingsWindow.xaml.cs">
+      <DependentUpon>ViewTrainingsWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gui\ViewUsersWindow.xaml.cs">
       <DependentUpon>ViewUsersWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Misc\DataTypes.cs" />
     <Page Include="Gui\AdminWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gui\CreateTrainingWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -110,7 +120,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Gui\ViewTrainers.xaml">
+    <Page Include="Gui\ViewTrainersWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gui\ViewTrainingsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

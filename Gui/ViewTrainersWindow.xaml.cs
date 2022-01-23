@@ -34,7 +34,10 @@ namespace SR44_2020_POP2021.Gui
         {
             InitializeComponent();
             this.user = user;
-
+            if(user == null)
+            {
+                TrainerTable.Columns[5].Visibility = Visibility.Hidden;   
+            }
             ShowTrainers();
         }
 

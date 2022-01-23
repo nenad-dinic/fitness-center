@@ -20,7 +20,7 @@
             <TextBox x:Name="MinuteField" HorizontalAlignment="Left" Margin="320,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
             <Button x:Name="CreateBtn" Content="Kreiraj" HorizontalAlignment="Right" Margin="0,35,10,0" VerticalAlignment="Top" Width="56" Click="CreateBtn_Click"/>
         </Grid>
-        <DataGrid x:Name="TrainingsTable" Margin="10,0,10,10" Height="354" VerticalAlignment="Bottom" >
+        <DataGrid x:Name="TrainingsTable" Margin="10,0,10,10" Height="354" VerticalAlignment="Bottom" IsReadOnly="True" >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding id}" Header="ID" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding trainer}" Header="Instruktor"/>
@@ -30,7 +30,7 @@
                 <DataGridTemplateColumn Header="Brisanje">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Click="DeleteBtn_Click">
+                            <Button Click="DeleteBtn_Click" IsEnabled="{Binding canDelete}">
                                 Obrisi
                             </Button>
                         </DataTemplate>
@@ -39,8 +39,17 @@
                 <DataGridTemplateColumn Header="Rezervisanje">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Click="ReserveBtn_Click">
+                            <Button Click="ReserveBtn_Click" IsEnabled="{Binding canReserve}">
                                 Rezervisi
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Header="Prikazi polaznike">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="ViewTraineeBtn_Click">
+                                Prikazi polaznika
                             </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

@@ -24,6 +24,8 @@ namespace SR44_2020_POP2021.Gui
             public DateTime date { get; set; }
             public int duration { get; set; }
             public string status { get; set; }
+            public bool canReserve { get; set; }
+            public bool canDelete { get; set; }
         }
 
         DataTypes.User trainer;
@@ -53,6 +55,15 @@ namespace SR44_2020_POP2021.Gui
                 trainings = DataController.GetAllTrainingsForTrainer(trainer.id);
             }
 
+            if(viewer.userTypes == DataTypes.UserTypes.admin || viewer.userTypes == DataTypes.UserTypes.trainer)
+            {
+                TrainingsTable.Columns[6].Visibility = Visibility.Hidden;
+            }else if(viewer.userTypes == DataTypes.UserTypes.trainee)
+            {
+                CreateBtn.Visibility = Visibility.Hidden;
+                TrainingsTable.Columns[5].Visibility = Visibility.Hidden;
+                TrainingsTable.Columns[7].Visibility = Visibility.Hidden;
+            }
 
             foreach (DataTypes.Training t in trainings)
             {
@@ -62,7 +73,9 @@ namespace SR44_2020_POP2021.Gui
                     trainer = t.trainer.name + " " + t.trainer.surname,
                     date = t.date,
                     duration = t.duration,
-                    status = (t.trainee != null ? "rezervisan" : "slobodan")
+                    status = (t.trainee != null ? "rezervisan" : "slobodan"),
+                    canReserve = (t.trainee == null ? true : false),
+                    canDelete = (viewer.userTypes == DataTypes.UserTypes.admin ? true : (t.trainee == null ? true : false)),
                 });
             }
 
@@ -74,6 +87,10 @@ namespace SR44_2020_POP2021.Gui
             if (createTrainingWindow == null)
             {
                 createTrainingWindow = new CreateTrainingWindow(trainer);
+                createTrainingWindow.Closed += delegate { 
+                    createTrainingWindow = null;
+                    ShowTrainings();
+                };
                 createTrainingWindow.Show();
             }
             else
@@ -94,6 +111,12 @@ namespace SR44_2020_POP2021.Gui
             Row row = (Row)((Button)e.OriginalSource).DataContext;
             DataController.ReserveTraining(row.id, viewer);
             ShowTrainings();
+        }
+
+        public void ViewTraineeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Row row = (Row)((Button)e.OriginalSource).DataContext;
+
         }
 
     }

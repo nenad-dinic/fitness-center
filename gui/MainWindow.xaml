@@ -7,11 +7,13 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="355.835" Width="272.133" Closed="Window_Closed">
     <Grid>
-        <TextBox x:Name="JmbgField" Height="23" Margin="10,49,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox x:Name="PassField" Margin="10,103,10,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top" SpellCheck.IsEnabled="True"/>
+        <TextBox x:Name="JmbgField" Height="23" Margin="10,111,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <TextBox x:Name="PassField" Margin="10,170,10,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Top" SpellCheck.IsEnabled="True"/>
         <Button x:Name="RegBtn" Content="Registruj se" Margin="0,0,10,10" Height="20" VerticalAlignment="Bottom" Click="RegBtn_Click" HorizontalAlignment="Right" Width="75"/>
-        <Label Content="JMBG:" HorizontalAlignment="Left" Margin="10,23,0,0" VerticalAlignment="Top" Width="244"/>
-        <Label Content="Lozinka:" HorizontalAlignment="Left" Margin="10,77,0,0" VerticalAlignment="Top" Width="244"/>
+        <Label Content="JMBG:" HorizontalAlignment="Left" Margin="10,80,0,0" VerticalAlignment="Top" Width="244"/>
+        <Label Content="Lozinka:" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" Width="244"/>
         <Button x:Name="logInBtn" Content="Prijavi se" Margin="0,0,90,10" VerticalAlignment="Bottom" Click="Login_Click" HorizontalAlignment="Right" Width="75"/>
+        <Button x:Name="BasicCenterInfoBtn" Content="Osnovne informacije o fitnes centru" Margin="10,10,10,0" VerticalAlignment="Top" Height="28" Click="BasicCenterInfoBtn_Click"/>
+        <Button x:Name="ViewTrainersBtn" Content="Treneri" HorizontalAlignment="Left" Margin="71,43,0,0" VerticalAlignment="Top" Width="122" Click="ViewTrainersBtn_Click"/>
     </Grid>
 </Window>

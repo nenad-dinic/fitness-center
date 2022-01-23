@@ -22,7 +22,6 @@ namespace SR44_2020_POP2021
 
         public static void Init()
         {
-            center = new DataTypes.FitnessCenter(0, "Genericki Fitnes Centar", new DataTypes.Address(0, "Ulica", "5", "Novi Sad", "Srbija", false));
             users = new List<DataTypes.User>();
             trainings = new List<DataTypes.Training>();
             addresses = new List<DataTypes.Address>();
@@ -30,6 +29,7 @@ namespace SR44_2020_POP2021
             ReadAllAddresses();
             ReadAllUsers();
             ReadAllTrainings();
+            ReadCenter();
         }
 
         static void CreateFile(string path){
@@ -37,6 +37,13 @@ namespace SR44_2020_POP2021
                 Directory.CreateDirectory(Path.GetDirectoryName(path));
             }
             File.Create(path);
+        }
+
+        public static void WriteCenterToFile()
+        {
+            List<string> lines = new List<string>();
+            lines.Add(center.name + "," + center.address.id);
+            File.WriteAllLines(filePath + "center.txt", lines);
         }
 
         public static void WriteAllAddresses()
@@ -73,6 +80,22 @@ namespace SR44_2020_POP2021
             }
 
             File.WriteAllLines(filePath + "trainings.txt", lines);
+        }
+
+        private static void ReadCenter()
+        {
+            if (!File.Exists(filePath + "center.txt"))
+            {
+                CreateFile(filePath + "center.txt");
+                return;
+            }
+
+            string[] lines = File.ReadAllLines(filePath + "center.txt");
+            string name = lines[0].Split(',')[0];
+            DataTypes.Address address = GetAddressById(int.Parse(lines[0].Split(',')[1]));
+
+            center = new DataTypes.FitnessCenter(name, address);
+
         }
 
         private static void ReadAllAddresses()
@@ -212,6 +235,12 @@ namespace SR44_2020_POP2021
             return true;
         }
 
+        public static void UpdateCenterInfo(string name)
+        {
+            center.Update(name);
+            WriteCenterToFile();
+        }
+
         public static bool DeleteUser(int id)
         {
             foreach (DataTypes.User u in users)
@@ -313,6 +342,11 @@ namespace SR44_2020_POP2021
                 }
             }
             return null;
+        }
+
+        public static DataTypes.FitnessCenter GetFitnessCenterInfo()
+        {
+            return center;
         }
 
         public static DataTypes.User LoginUser(string jmbg, string password){

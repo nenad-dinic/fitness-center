@@ -43,7 +43,7 @@ namespace SR44_2020_POP2021.Gui
             }
         }
 
-        UpdateWindow updateWindow = null;
+        UpdateUserWindow updateWindow = null;
 
         void UpdateSelectedButton_Click(object sender, RoutedEventArgs e)
         {
@@ -51,7 +51,7 @@ namespace SR44_2020_POP2021.Gui
             DataTypes.User user = DataController.GetUserById(row.id);
             if(updateWindow == null)
             {
-                updateWindow = new UpdateWindow(user);
+                updateWindow = new UpdateUserWindow(user);
                 updateWindow.Closed += delegate { 
                     updateWindow = null;
                     ShowUsers();

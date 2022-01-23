@@ -70,8 +70,14 @@
     <Compile Include="Gui\TrainerWindow.xaml.cs">
       <DependentUpon>TrainerWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gui\UpdateWindow.xaml.cs">
-      <DependentUpon>UpdateWindow.xaml</DependentUpon>
+    <Compile Include="Gui\UpdateCenterInfo.xaml.cs">
+      <DependentUpon>UpdateCenterInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\UpdateUserWindow.xaml.cs">
+      <DependentUpon>UpdateUserWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gui\ViewCenterInfoWindow.xaml.cs">
+      <DependentUpon>ViewCenterInfoWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Gui\ViewTrainersWindow.xaml.cs">
       <DependentUpon>ViewTrainersWindow.xaml</DependentUpon>
@@ -116,7 +122,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Gui\UpdateWindow.xaml">
+    <Page Include="Gui\UpdateCenterInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gui\UpdateUserWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Gui\ViewCenterInfoWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -163,6 +177,9 @@
     <Resource Include="Files\addresses.txt" />
     <Resource Include="Files\trainings.txt" />
     <Resource Include="Files\users.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Files\center.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

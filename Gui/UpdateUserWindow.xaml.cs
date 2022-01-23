@@ -17,11 +17,11 @@ namespace SR44_2020_POP2021.Gui
     /// <summary>
     /// Interaction logic for UpdateWindow.xaml
     /// </summary>
-    public partial class UpdateWindow : Window
+    public partial class UpdateUserWindow : Window
     {
         DataTypes.User user;
 
-        public UpdateWindow(DataTypes.User user)
+        public UpdateUserWindow(DataTypes.User user)
         {
             InitializeComponent();
 

@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace SR44_2020_POP2021.Gui
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -78,6 +75,47 @@ namespace SR44_2020_POP2021.Gui
             if(registerWindow != null)
             {
                 registerWindow.Close();
+            }
+
+            if(viewCenterInfoWindow != null)
+            {
+                viewCenterInfoWindow.Close();
+            }
+
+            if(viewTrainersWindow != null)
+            {
+                viewTrainersWindow.Close();                    
+            }
+
+        }
+
+        ViewTrainersWindow viewTrainersWindow = null;
+        private void ViewTrainersBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(viewTrainersWindow == null)
+            {
+                viewTrainersWindow = new ViewTrainersWindow(null);
+                viewTrainersWindow.Closed += delegate { viewTrainersWindow = null; };
+                viewTrainersWindow.Show();
+            }
+            else
+            {
+                viewTrainersWindow.Focus();
+            }
+        }
+
+        ViewCenterInfoWindow viewCenterInfoWindow = null;
+        private void BasicCenterInfoBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (viewCenterInfoWindow == null)
+            {
+                viewCenterInfoWindow = new ViewCenterInfoWindow();
+                viewCenterInfoWindow.Closed += delegate { viewCenterInfoWindow = null; };
+                viewCenterInfoWindow.Show();
+            }
+            else
+            {
+                viewCenterInfoWindow.Focus();
             }
         }
     }

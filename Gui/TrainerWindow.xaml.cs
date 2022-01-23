@@ -32,27 +32,27 @@ namespace SR44_2020_POP2021.Gui
             WelcomeLabel.Content = user.name + " " + user.surname;
         }
 
-        UpdateWindow updateWindow = null;
+        UpdateUserWindow updateUserWindow = null;
 
         private void ViewAndEditDataBtn_Click(object sender, RoutedEventArgs e)
         {
-            if (updateWindow == null)
+            if (updateUserWindow == null)
             {
-                updateWindow = new UpdateWindow(user);
-                updateWindow.Closing += delegate { updateWindow = null; };
-                updateWindow.Show();
+                updateUserWindow = new UpdateUserWindow(user);
+                updateUserWindow.Closing += delegate { updateUserWindow = null; };
+                updateUserWindow.Show();
             }
             else
             {
-                updateWindow.Focus();
+                updateUserWindow.Focus();
             }
         }
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            if (updateWindow != null)
+            if (updateUserWindow != null)
             {
-                updateWindow.Close();
+                updateUserWindow.Close();
             }
 
             if(viewTrainingsWindow != null)

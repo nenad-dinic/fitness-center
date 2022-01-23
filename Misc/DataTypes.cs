@@ -42,15 +42,19 @@ namespace SR44_2020_POP2021
 
         public class FitnessCenter
         {
-            public int id { get; private set; }
             public string name { get; private set; }
             public Address address { get; private set; }
-            public FitnessCenter(int id, string name, Address address)
+            public FitnessCenter(string name, Address address)
             {
-                this.id = id;
                 this.name = name;
                 this.address = address;
             }
+
+            public void Update(string name)
+            {
+                this.name = name;
+            }
+
         }
 
         public enum Genders

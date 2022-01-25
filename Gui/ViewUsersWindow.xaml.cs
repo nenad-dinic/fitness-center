@@ -32,17 +32,26 @@ namespace SR44_2020_POP2021.Gui
             ShowUsers();
         }
 
-        void ShowUsers()
+        private void SearchBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ShowUsers(NameField.Text, SurnameField.Text, AddressField.Text, EmailField.Text);
+        }
+
+        void ShowUsers(string nameFilter = "", string surnameFilter = "", string addressFilter = "", string emailFilter = "")
         {
             UsersTable.Items.Clear();
             List<DataTypes.User> users = DataController.GetAllUsers();
             foreach (DataTypes.User user in users)
             {
                 string address = user.address.street + " " + user.address.houseNum + ", " + user.address.city + ", " + user.address.country;
-                UsersTable.Items.Add(new Row() { id = user.id, name = user.name, surname = user.surname, address = address, email = user.email });
+                if(user.name.ToLower().Contains(nameFilter.ToLower()) && user.surname.ToLower().Contains(surnameFilter.ToLower()) && address.ToLower().Contains(addressFilter.ToLower()) && user.email.ToLower().Contains(emailFilter.ToLower()))
+                {
+                    UsersTable.Items.Add(new Row() { id = user.id, name = user.name, surname = user.surname, address = address, email = user.email });   
+                }
             }
-        }
 
+        }
+        
         UpdateUserWindow updateWindow = null;
 
         void UpdateSelectedButton_Click(object sender, RoutedEventArgs e)

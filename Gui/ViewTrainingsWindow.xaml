@@ -15,7 +15,7 @@
             <TextBox x:Name="HourField" HorizontalAlignment="Left" Margin="260,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
             <Label Content="Trajanje treninga:" HorizontalAlignment="Left" Margin="385,10,0,0" VerticalAlignment="Top" Width="120"/>
             <TextBox x:Name="DurationField" HorizontalAlignment="Left" Margin="385,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Button x:Name="SearchBtn" Content="Pretrazi" Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="56"/>
+            <Button x:Name="SearchBtn" Content="Pretrazi" Margin="0,10,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="56" Click="SearchBtn_Click"/>
             <DatePicker x:Name="DateField" HorizontalAlignment="Left" Margin="135,36,0,0" VerticalAlignment="Top" Width="120"/>
             <TextBox x:Name="MinuteField" HorizontalAlignment="Left" Margin="320,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
             <Button x:Name="CreateBtn" Content="Kreiraj" HorizontalAlignment="Right" Margin="0,35,10,0" VerticalAlignment="Top" Width="56" Click="CreateBtn_Click"/>

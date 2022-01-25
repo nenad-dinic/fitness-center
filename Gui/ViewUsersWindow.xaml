@@ -42,6 +42,6 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="SearchBtn" Content="Pretrazi" Margin="0,25,10,0" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.59" HorizontalAlignment="Right" Width="59"/>
+        <Button x:Name="SearchBtn" Content="Pretrazi" Margin="0,25,10,0" VerticalAlignment="Top" RenderTransformOrigin="0.495,0.59" HorizontalAlignment="Right" Width="59" Click="SearchBtn_Click"/>
     </Grid>
 </Window>

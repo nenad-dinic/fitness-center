@@ -21,7 +21,7 @@ namespace SR44_2020_POP2021.Gui
         {
             public int id { get; set; }
             public string trainer { get; set; }
-            public DateTime date { get; set; }
+            public string date { get; set; }
             public int duration { get; set; }
             public string status { get; set; }
             public string trainee { get; set; }
@@ -41,8 +41,27 @@ namespace SR44_2020_POP2021.Gui
 
         }
 
-        void ShowTrainings()
+        private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
+            DateTime date;
+
+            string dateString;
+
+            if(!DateTime.TryParse(DateField.Text, out date))
+            {
+                dateString = "";
+            }
+            else
+            {
+                dateString = date.Date.ToString();
+            }
+
+            ShowTrainings(NameField.Text, dateString, HourField.Text, MinuteField.Text, DurationField.Text);
+        }
+
+        void ShowTrainings(string trainerNameFilter = "", string dateFilter = "", string hourFilter = "", string minuteFilter = "", string durationFilter = "")
+        {
+
             List<DataTypes.Training> trainings;
 
             TrainingsTable.Items.Clear();
@@ -67,17 +86,20 @@ namespace SR44_2020_POP2021.Gui
 
             foreach (DataTypes.Training t in trainings)
             {
-                TrainingsTable.Items.Add(new Row()
+                if (t.trainer.name.ToLower().Contains(trainerNameFilter.ToLower()) && t.date.Date.ToString().Contains(dateFilter) && t.date.Hour.ToString().Contains(hourFilter) && t.date.Minute.ToString().Contains(minuteFilter) && t.duration.ToString().Contains(durationFilter))
                 {
-                    id = t.id,
-                    trainer = t.trainer.name + " " + t.trainer.surname,
-                    date = t.date,
-                    duration = t.duration,
-                    status = (t.trainee != null ? "rezervisan" : "slobodan"),
-                    trainee = (t.trainee != null ? t.trainee.name + " " + t.trainee.surname : "/"),
-                    canReserve = (t.trainee == null ? true : false),
-                    canDelete = (viewer.userTypes == DataTypes.UserTypes.admin ? true : (t.trainee == null ? true : false)),
-                });
+                    TrainingsTable.Items.Add(new Row()
+                    {
+                        id = t.id,
+                        trainer = t.trainer.name + " " + t.trainer.surname,
+                        date = t.date.ToString(),
+                        duration = t.duration,
+                        status = (t.trainee != null ? "rezervisan" : "slobodan"),
+                        trainee = (t.trainee != null ? t.trainee.name + " " + t.trainee.surname : "/"),
+                        canReserve = (t.trainee == null ? true : false),
+                        canDelete = (viewer.userTypes == DataTypes.UserTypes.admin ? true : (t.trainee == null ? true : false)),
+                    });
+                }
             }
 
         }

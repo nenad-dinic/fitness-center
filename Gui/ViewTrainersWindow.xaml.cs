@@ -41,14 +41,22 @@ namespace SR44_2020_POP2021.Gui
             ShowTrainers();
         }
 
-        void ShowTrainers()
+        private void SearchBtn_Click(object sender, RoutedEventArgs e)
+        {
+            ShowTrainers(NameField.Text, SurnameField.Text, AddressField.Text, EmailField.Text);
+        }
+
+        void ShowTrainers(string nameFilter = "", string surnameFilter = "", string addressFilter = "", string emailFilter = "")
         {
             TrainerTable.Items.Clear();
             List<DataTypes.User> trainers = DataController.GetAllTrainers();
             foreach (DataTypes.User trainer in trainers)
             {
                 string address = trainer.address.street + " " + trainer.address.houseNum + ", " + trainer.address.city + ", " + trainer.address.country;
-                TrainerTable.Items.Add(new Row() { id = trainer.id, name = trainer.name, surname = trainer.surname, address = address, email = trainer.email });
+                if (trainer.name.ToLower().Contains(nameFilter.ToLower()) && trainer.surname.ToLower().Contains(surnameFilter.ToLower()) && address.ToLower().Contains(addressFilter.ToLower()) && trainer.email.ToLower().Contains(emailFilter.ToLower()))
+                {
+                    TrainerTable.Items.Add(new Row() { id = trainer.id, name = trainer.name, surname = trainer.surname, address = address, email = trainer.email });
+                }
             }
         }
 
@@ -77,5 +85,6 @@ namespace SR44_2020_POP2021.Gui
                 viewTrainingsWindow.Close();
             }
         }
+
     }
 }

@@ -69,7 +69,7 @@ namespace SR44_2020_POP2021.Gui
                 trainer = trainers[TrainerField.SelectedIndex];
             }
 
-            DataController.CreateTraining(date, duration, false, trainer, null);
+            DataController.CreateTraining(date, duration, trainer, null);
 
             MessageBox.Show("Trening uspesno kreiran");
             this.Close();

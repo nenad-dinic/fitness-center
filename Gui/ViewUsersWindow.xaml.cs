@@ -71,6 +71,13 @@ namespace SR44_2020_POP2021.Gui
             ShowUsers();
         }
 
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            if(updateWindow != null)
+            {
+                updateWindow.Close();
+            }
+        }
     }
 
 }

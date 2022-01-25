@@ -1,0 +1,28 @@
+﻿<Window x:Class="SR44_2020_POP2021.Gui.ViewReservationsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SR44_2020_POP2021.Gui"
+        mc:Ignorable="d"
+        Title="ViewReservationsWindow" Height="450" Width="800">
+    <Grid>
+        <DataGrid x:Name="TrainingsTable">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding id}" Header="ID" Visibility="Hidden"/>
+                <DataGridTextColumn Binding="{Binding trainer}" Header="Instruktor"/>
+                <DataGridTextColumn Binding="{Binding date}" Header="Datum"/>
+                <DataGridTextColumn Binding="{Binding duration}" Header="Trajanje"/>
+                <DataGridTemplateColumn Header="Otkazi rezervaciju">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Click="CancelBtn_Click">
+                                Otkazi
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

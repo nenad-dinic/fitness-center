@@ -11,7 +11,7 @@
         <Button x:Name="ViewTrainerBtn" Content="Prikaz trenera" Height="59" Margin="224,70,10,0" VerticalAlignment="Top" Click="ViewTrainerBtn_Click"/>
         <Button x:Name="LogOutBtn" Content="Odjava" Margin="224,134,10,0" Height="59" VerticalAlignment="Top" Click="LogOutBtn_Click"/>
         <Label x:Name="WelcomeLabel" Content="Test" Margin="10,10,10,0" VerticalAlignment="Top" HorizontalContentAlignment="Center" Height="41"/>
-        <Button Content="Vidi rezervisane treninge" Margin="10,134,224,0" VerticalAlignment="Top" Height="59"/>
+        <Button x:Name="ViewReservationBtn" Content="Vidi rezervisane treninge" Margin="10,134,224,0" VerticalAlignment="Top" Height="59" Click="ViewReservationBtn_Click"/>
 
     </Grid>
 </Window>

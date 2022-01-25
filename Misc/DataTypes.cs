@@ -115,26 +115,23 @@ namespace SR44_2020_POP2021
             public int id { get; private set; }
             public DateTime date { get; private set; }
             public int duration { get; private set; }
-            public bool isReserved { get; private set; }
             public User trainer { get; private set; }
             public User trainee { get; private set; }
             public bool isDeleted { get; private set; }
 
-            public Training(int id, DateTime date, int duration, bool isReserved, DataTypes.User trainer, DataTypes.User trainee, bool isDeleted)
+            public Training(int id, DateTime date, int duration, DataTypes.User trainer, DataTypes.User trainee, bool isDeleted)
             {
                 this.id = id;
                 this.date = date;
                 this.duration = duration;
-                this.isReserved = isReserved;
                 this.trainer = trainer;
                 this.trainee = trainee;
                 this.isDeleted = isDeleted;
             }
 
-            public void Update(DateTime date, int duration, bool isReserved, User trainer, User trainee){
+            public void Update(DateTime date, int duration, User trainer, User trainee){
                 this.date = date;
                 this.duration = duration;
-                this.isReserved = isReserved;
                 this.trainer = trainer;
                 this.trainee = trainee;
             }

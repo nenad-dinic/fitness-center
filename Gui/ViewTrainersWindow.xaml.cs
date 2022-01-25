@@ -70,5 +70,12 @@ namespace SR44_2020_POP2021.Gui
             }
         }
 
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            if(viewTrainingsWindow != null)
+            {
+                viewTrainingsWindow.Close();
+            }
+        }
     }
 }

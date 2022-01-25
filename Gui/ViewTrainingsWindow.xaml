@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SR44_2020_POP2021.Gui"
         mc:Ignorable="d"
-        Title="ViewTrainingsWindow" Height="490" Width="646">
+        Title="ViewTrainingsWindow" Height="490" Width="646" Closed="Window_Closed">
     <Grid>
         <Grid x:Name="SearchGrid" Height="65" VerticalAlignment="Top">
             <Label Content="Ime instruktora:" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120"/>
@@ -27,6 +27,7 @@
                 <DataGridTextColumn Binding="{Binding date}" Header="Datum"/>
                 <DataGridTextColumn Binding="{Binding duration}" Header="Trajanje"/>
                 <DataGridTextColumn Binding="{Binding status}" Header="Status"/>
+                <DataGridTextColumn Binding="{Binding trainee}" Header="Polaznik"/>
                 <DataGridTemplateColumn Header="Brisanje">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -41,15 +42,6 @@
                         <DataTemplate>
                             <Button Click="ReserveBtn_Click" IsEnabled="{Binding canReserve}">
                                 Rezervisi
-                            </Button>
-                        </DataTemplate>
-                    </DataGridTemplateColumn.CellTemplate>
-                </DataGridTemplateColumn>
-                <DataGridTemplateColumn Header="Prikazi polaznike">
-                    <DataGridTemplateColumn.CellTemplate>
-                        <DataTemplate>
-                            <Button Click="ViewTraineeBtn_Click">
-                                Prikazi polaznika
                             </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

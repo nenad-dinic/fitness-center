@@ -76,7 +76,7 @@ namespace SR44_2020_POP2021
 
             foreach (DataTypes.Training t in trainings)
             {
-                lines.Add(t.id + "," + t.date + "," + t.duration + "," + t.isReserved + "," + t.trainer.id + "," + (t.trainee != null ? t.trainee.id : -1) + "," + t.isDeleted);
+                lines.Add(t.id + "," + t.date + "," + t.duration + "," + t.trainer.id + "," + (t.trainee != null ? t.trainee.id : -1) + "," + t.isDeleted);
             }
 
             File.WriteAllLines(filePath + "trainings.txt", lines);
@@ -164,11 +164,10 @@ namespace SR44_2020_POP2021
                 int id = int.Parse(fields[0]);
                 DateTime date = DateTime.Parse(fields[1]);
                 int duration = int.Parse(fields[2]);
-                bool isReserved = bool.Parse(fields[3]);
-                DataTypes.User trainer = GetUserById(int.Parse(fields[4]));
-                DataTypes.User trainee = GetUserById(int.Parse(fields[5]));
-                bool isDeleted = bool.Parse(fields[6]);
-                trainings.Add(new DataTypes.Training(id, date, duration, isReserved, trainer, trainee, isDeleted));
+                DataTypes.User trainer = GetUserById(int.Parse(fields[3]));
+                DataTypes.User trainee = GetUserById(int.Parse(fields[4]));
+                bool isDeleted = bool.Parse(fields[5]);
+                trainings.Add(new DataTypes.Training(id, date, duration, trainer, trainee, isDeleted));
             }
         }
 
@@ -187,9 +186,9 @@ namespace SR44_2020_POP2021
             return address;
         }
 
-        public static DataTypes.Training CreateTraining(DateTime date, int duration, bool isDeserved, DataTypes.User trainer, DataTypes.User trainee)
+        public static DataTypes.Training CreateTraining(DateTime date, int duration, DataTypes.User trainer, DataTypes.User trainee)
         {
-            DataTypes.Training training = new DataTypes.Training(GetLastTrainingId() + 1, date, duration, isDeserved, trainer, trainee, false);
+            DataTypes.Training training = new DataTypes.Training(GetLastTrainingId() + 1, date, duration, trainer, trainee, false);
             trainings.Add(training);
             WriteAllTrainings();
             return training;
@@ -221,14 +220,14 @@ namespace SR44_2020_POP2021
             return true;
         }
 
-        public static bool UpdateTraining(int id, DateTime date, int duration, bool isReserved, DataTypes.User trainer, DataTypes.User trainee){
+        public static bool UpdateTraining(int id, DateTime date, int duration, DataTypes.User trainer, DataTypes.User trainee){
             DataTypes.Training training = GetTrainingById(id);
 
             if(training == null){
                 return false;
             }
 
-            training.Update(date, duration, isReserved, trainer, trainee);
+            training.Update(date, duration, trainer, trainee);
 
 
             WriteAllTrainings();
@@ -411,10 +410,30 @@ namespace SR44_2020_POP2021
             return trainings;
         }
 
+        public static List<DataTypes.Training> GetAllTrainingsForTrainee(int id)
+        {
+            List<DataTypes.Training> trainings = new List<DataTypes.Training>();
+            foreach (DataTypes.Training t in DataController.trainings)
+            {
+                if (t.isDeleted == false && t.trainee != null && t.trainee.id == id)
+                {
+                    trainings.Add(t);
+                }
+            }
+            return trainings;
+        }
+
         public static void ReserveTraining(int id, DataTypes.User trainee)
         {
             DataTypes.Training training = GetTrainingById(id);
-            UpdateTraining(id, training.date, training.duration, true, training.trainer, trainee);
+            UpdateTraining(id, training.date, training.duration, training.trainer, trainee);
+        }
+
+        public static void CancelTraining(int id)
+        {
+            DataTypes.Training training = GetTrainingById(id);
+
+            UpdateTraining(id, training.date, training.duration, training.trainer, null);
         }
 
     }

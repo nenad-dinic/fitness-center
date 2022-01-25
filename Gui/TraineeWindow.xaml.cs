@@ -73,6 +73,21 @@ namespace SR44_2020_POP2021.Gui
             }
         }
 
+        ViewReservationsWindow viewReservationsWindow = null;
+        private void ViewReservationBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if(viewReservationsWindow == null)
+            {
+                viewReservationsWindow = new ViewReservationsWindow(user);
+                viewReservationsWindow.Show();
+                viewReservationsWindow.Closed += delegate { viewReservationsWindow = null; };
+            }
+            else
+            {
+                viewReservationsWindow.Focus();
+            }
+        }
+
         private void Window_Closed(object sender, EventArgs e)
         {
             if(updateUserWindow != null)
@@ -83,6 +98,11 @@ namespace SR44_2020_POP2021.Gui
             if(viewTrainersWindow != null)
             {
                 viewTrainersWindow.Close();
+            }
+
+            if(viewReservationsWindow != null)
+            {
+                viewReservationsWindow.Close();
             }
 
         }

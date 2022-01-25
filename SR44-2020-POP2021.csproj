@@ -79,6 +79,9 @@
     <Compile Include="Gui\ViewCenterInfoWindow.xaml.cs">
       <DependentUpon>ViewCenterInfoWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Gui\ViewReservationsWindow.xaml.cs">
+      <DependentUpon>ViewReservationsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Gui\ViewTrainersWindow.xaml.cs">
       <DependentUpon>ViewTrainersWindow.xaml</DependentUpon>
     </Compile>
@@ -131,6 +134,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="Gui\ViewCenterInfoWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Gui\ViewReservationsWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

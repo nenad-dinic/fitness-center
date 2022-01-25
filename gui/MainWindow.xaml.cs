@@ -72,6 +72,8 @@ namespace SR44_2020_POP2021.Gui
 
         private void Window_Closed(object sender, EventArgs e)
         {
+
+
             if(registerWindow != null)
             {
                 registerWindow.Close();
@@ -86,6 +88,8 @@ namespace SR44_2020_POP2021.Gui
             {
                 viewTrainersWindow.Close();                    
             }
+            
+            Application.Current.Shutdown();
 
         }
 

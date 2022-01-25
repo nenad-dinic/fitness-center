@@ -16,9 +16,9 @@
         <Label Content="Grad:" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Width="106" Height="26"/>
         <TextBox x:Name="CityField" Margin="121,107,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
         <Label Content="Drzava:" HorizontalAlignment="Left" Margin="10,134,0,0" VerticalAlignment="Top" Width="106" Height="26"/>
-        <TextBox x:Name="CountryField" HorizontalAlignment="Left" Margin="121,138,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="243"/>
-        <Button x:Name="CancelBtn" Content="Otkazi" HorizontalAlignment="Left" Margin="309,233,0,0" VerticalAlignment="Top" Height="26" Width="55" Click="CancelBtn_Click"/>
-        <Button x:Name="UpdateBtn" Content="Izmeni" HorizontalAlignment="Left" Margin="249,233,0,0" VerticalAlignment="Top" Height="26" Width="55" Click="UpdateBtn_Click"/>
+        <TextBox x:Name="CountryField" Margin="121,138,10,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Button x:Name="CancelBtn" Content="Otkazi" Margin="0,0,10,10" Click="CancelBtn_Click" Height="26" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="55"/>
+        <Button x:Name="UpdateBtn" Content="Izmeni" Margin="0,0,70,10" Click="UpdateBtn_Click" HorizontalAlignment="Right" Width="55" Height="26" VerticalAlignment="Bottom"/>
 
     </Grid>
 </Window>

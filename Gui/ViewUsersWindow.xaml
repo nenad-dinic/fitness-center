@@ -15,7 +15,7 @@
         <TextBox x:Name="AddressField" HorizontalAlignment="Left" Margin="260,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Email:" HorizontalAlignment="Left" Margin="385,0,0,0" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="EmailField" HorizontalAlignment="Left" Margin="385,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <DataGrid x:Name="UsersTable" HorizontalAlignment="Center" Height="200" VerticalAlignment="Top" Width="612" Margin="0,66,0,0" IsReadOnly="True" >
+        <DataGrid x:Name="UsersTable" HorizontalAlignment="Center" Height="200" VerticalAlignment="Top" Width="612" Margin="0,66,0,0" IsReadOnly="True" HeadersVisibility="Column" >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding id}" Header="ID" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding name}" Header="Ime"/>

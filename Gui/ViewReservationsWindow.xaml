@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="ViewReservationsWindow" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="TrainingsTable">
+        <DataGrid x:Name="TrainingsTable" HeadersVisibility="Column">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding id}" Header="ID" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding trainer}" Header="Instruktor"/>

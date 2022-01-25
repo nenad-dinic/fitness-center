@@ -75,13 +75,19 @@ namespace SR44_2020_POP2021.Gui
                 trainings = DataController.GetAllTrainingsForTrainer(trainer.id);
             }
 
-            if(viewer.userTypes == DataTypes.UserTypes.admin || viewer.userTypes == DataTypes.UserTypes.trainer)
+            if(viewer.userTypes == DataTypes.UserTypes.admin)
             {
                 TrainingsTable.Columns[7].Visibility = Visibility.Hidden;
-            }else if(viewer.userTypes == DataTypes.UserTypes.trainee)
+            }else if(viewer.userTypes == DataTypes.UserTypes.trainer)
+            {
+                TrainingsTable.Columns[7].Visibility = Visibility.Hidden;
+                NameField.IsEnabled = false;
+            }
+            else if(viewer.userTypes == DataTypes.UserTypes.trainee)
             {
                 CreateBtn.Visibility = Visibility.Hidden;
                 TrainingsTable.Columns[6].Visibility = Visibility.Hidden;
+                NameField.IsEnabled = false;
             }
 
             foreach (DataTypes.Training t in trainings)

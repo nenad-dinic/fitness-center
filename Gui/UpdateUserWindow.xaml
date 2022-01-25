@@ -24,11 +24,13 @@
         <TextBox x:Name="HouseNumField" Margin="155,217,10,0" TextWrapping="Wrap" Text="TextBox" Height="23" VerticalAlignment="Top"/>
         <TextBox x:Name="JmbgField" Margin="155,130,10,0" TextWrapping="Wrap" Text="TextBox" Height="23" VerticalAlignment="Top" IsEnabled="False"/>
         <TextBox x:Name="SurnameField" Margin="155,101,10,0" TextWrapping="Wrap" Text="TextBox" Height="23" VerticalAlignment="Top"/>
-        <ComboBox x:Name="GenderField" HorizontalAlignment="Left" Margin="155,158,0,0" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="GenderField" Margin="155,158,18,0" VerticalAlignment="Top"/>
         <Button x:Name="CancelBtn" Content="Otkazi" HorizontalAlignment="Right" Margin="0,0,10,10" VerticalAlignment="Bottom" Width="75" Click="CancelBtn_Click"/>
         <Button x:Name="UpdateBtn" Content="Izmeni" Margin="0,0,90,10" HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom" Click="UpdateBtn_Click"/>
         <Label Content="Sifra:" HorizontalAlignment="Left" Margin="10,324,0,0" VerticalAlignment="Top" Width="66"/>
-        <TextBox x:Name="PassField" Height="23" Margin="155,332,10,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="PassField" Margin="155,332,10,0" VerticalAlignment="Top" Height="23"/>
+        <PasswordBox x:Name="RepeatPassField" Margin="155,360,10,0" VerticalAlignment="Top" Height="23"/>
+        <Label Content="Ponovite sifru:" HorizontalAlignment="Left" Margin="10,355,0,0" VerticalAlignment="Top" Width="86"/>
 
     </Grid>
 </Window>

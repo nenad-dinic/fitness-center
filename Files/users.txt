@@ -3,3 +3,4 @@
 2,Trener,treneric,32121,trener,male,2,trener@gmail.com,trainer,False
 3,Marko,Markovic,0101001,marko,male,3,marko@gmail.com,trainer,False
 4,Ivana,Ivanovic,0202002,ivana,female,4,ivana@gmail.com,trainee,False
+5,Proba,Probic,03030031,proba,female,6,proba@mail.rs,trainee,False

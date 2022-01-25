@@ -28,7 +28,9 @@
         <Button x:Name="RegisterBtn" Content="Registruj se" Margin="0,0,90,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="RegisterBtn_Click" TabIndex="12"/>
         <Button x:Name="CancelBtn" Content="Otkazi" Margin="0,0,10,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="CancelBtn_Click" TabIndex="13"/>
         <Label Content="Sifra:" HorizontalAlignment="Left" Margin="30,289,0,0" VerticalAlignment="Top" Width="87"/>
-        <TextBox x:Name="PassField" Height="23" Margin="184,289,42,0" TextWrapping="Wrap" VerticalAlignment="Top" TabIndex="11"/>
+        <PasswordBox x:Name="PassField" Margin="184,289,42,0" VerticalAlignment="Top" Height="23" TabIndex="10"/>
+        <PasswordBox x:Name="RepeatPassField" Margin="184,317,42,0" VerticalAlignment="Top" Height="23" TabIndex="11"/>
+        <Label Content="Ponovite sifru:" HorizontalAlignment="Left" Margin="30,317,0,0" VerticalAlignment="Top" Width="87"/>
 
     </Grid>
 </Window>

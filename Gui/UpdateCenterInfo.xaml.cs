@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Text.RegularExpressions;
 
 namespace SR44_2020_POP2021.Gui
 {
@@ -38,11 +39,50 @@ namespace SR44_2020_POP2021.Gui
 
         private void UpdateBtn_Click(object sender, RoutedEventArgs e)
         {
+
+            List<string> errors = new List<string>();
+
             string name = CenterNameField.Text;
             string street = StreetField.Text;
             string houseNum = HouseNumField.Text;
             string city = CityField.Text;
             string country = CountryField.Text;
+
+            if (!Regex.Match(name, "^[A-Z][a-zA-Z -]*$").Success)
+            {
+                errors.Add("Ime centra nije validno");
+            }
+
+            if (!Regex.Match(street, "^[A-Z][a-zA-Z -]*$").Success)
+            {
+                errors.Add("Ime ulice nije validno");
+            }
+
+            if (!Regex.Match(houseNum, "^((\\d+[a-z]{1})|(\\d+))(\\/\\d+)?$").Success)
+            {
+                errors.Add("Broj mesta stanovanja nije validan");
+            }
+
+            if (!Regex.Match(city, "^[A-Z][a-zA-Z ]*$").Success)
+            {
+                errors.Add("Ime grada nije validno");
+            }
+
+            if (!Regex.Match(country, "^[A-Z][a-zA-Z -]*$").Success)
+            {
+                errors.Add("Ime drzave nije validno");
+            }
+
+            if (errors.Count > 0)
+            {
+                string message = "";
+                foreach (string error in errors)
+                {
+                    message += (error + "\n");
+                }
+                MessageBox.Show(message);
+                return;
+            }
 
             DataController.UpdateCenterInfo(name);
             DataController.UpdateAddress(center.address.id, street, houseNum, city, country);

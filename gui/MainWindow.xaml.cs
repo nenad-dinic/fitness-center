@@ -42,7 +42,7 @@ namespace SR44_2020_POP2021.Gui
 
         private void Login_Click(object sender, RoutedEventArgs e){
             DataTypes.User user;
-            user = DataController.LoginUser(JmbgField.Text, PassField.Text);
+            user = DataController.LoginUser(JmbgField.Text, PassField.Password);
             if(user == null)
             {
                 MessageBox.Show("Uneli ste pogresan JMBG ili sifru");
@@ -64,7 +64,7 @@ namespace SR44_2020_POP2021.Gui
             window.Show();
             window.Closing += delegate {
                 JmbgField.Text = "";
-                PassField.Text = "";
+                PassField.Password = "";
                 this.Show(); 
             };
             this.Hide();

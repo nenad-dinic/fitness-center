@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SR44_2020_POP2021.Gui"
         mc:Ignorable="d"
-        Title="CreateTrainingWindow" Height="237" Width="340">
+        Title="Napravi trening" Height="237" Width="340">
     <Grid>
         <Label Content="Datum:" HorizontalAlignment="Left" Margin="11,10,0,0" VerticalAlignment="Top" Width="175"/>
         <DatePicker x:Name="DateField" Margin="0,10,15,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="170"/>

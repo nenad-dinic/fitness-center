@@ -120,6 +120,25 @@ namespace SR44_2020_POP2021.Gui
                 errors.Add("Vreme trajanja nije validno (20-120min) i mora biti deljivo sa 10");
             }
 
+            if(trainer != null){
+                List<DataTypes.Training> trainings = DataController.GetAllTrainingsForTrainer(trainer.id);
+
+                DateTime trainginStartAt = date.AddHours(hour).AddMinutes(minute);
+                DateTime trainingEndAt = trainginStartAt.AddMinutes(duration);
+                foreach(DataTypes.Training t in trainings){
+                    DateTime tempStartAt = t.date;
+                    DateTime tempEndAt = t.date.AddMinutes(t.duration);
+
+                    if( (trainginStartAt >= tempStartAt && trainginStartAt < tempEndAt) || (trainingEndAt > tempStartAt && trainingEndAt <= tempEndAt) || 
+                    (tempStartAt >= trainginStartAt && tempStartAt < trainingEndAt) || (tempEndAt > trainginStartAt && tempEndAt <= trainingEndAt) ){
+                        errors.Add("Vremenski period je vec zauzet!");
+                        break;
+                    }
+
+                }
+
+            }
+
             if (errors.Count > 0)
             {
                 string message = "";

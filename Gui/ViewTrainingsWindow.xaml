@@ -20,7 +20,7 @@
             <TextBox x:Name="MinuteField" HorizontalAlignment="Left" Margin="320,36,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="60"/>
             <Button x:Name="CreateBtn" Content="Kreiraj" HorizontalAlignment="Right" Margin="0,35,10,0" VerticalAlignment="Top" Width="56" Click="CreateBtn_Click"/>
         </Grid>
-        <DataGrid x:Name="TrainingsTable" Margin="10,0,10,10" Height="354" VerticalAlignment="Bottom" IsReadOnly="True" HeadersVisibility="Column" >
+        <DataGrid x:Name="TrainingsTable" Margin="10,110,10,10" IsReadOnly="True" HeadersVisibility="Column" >
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding id}" Header="ID" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding trainer}" Header="Instruktor"/>

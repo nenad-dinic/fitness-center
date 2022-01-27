@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Prikaz instruktora" Height="450" Width="800" Closed="Window_Closed">
     <Grid>
-        <DataGrid x:Name="TrainerTable" HorizontalAlignment="Center" Height="329" Margin="0,95,0,0" VerticalAlignment="Top" Width="780" HeadersVisibility="Column" IsReadOnly="True">
+        <DataGrid x:Name="TrainerTable" Margin="10,95,10,10" HeadersVisibility="Column" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding id}" Header="ID" Visibility="Hidden"/>
                 <DataGridTextColumn Binding="{Binding name}" Header="Ime"/>
@@ -25,7 +25,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Grid HorizontalAlignment="Center" Height="80" VerticalAlignment="Top" Width="798">
+        <Grid Height="80" VerticalAlignment="Top" Margin="1,0,1,0">
             <Label Content="Ime" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120"/>
             <TextBox x:Name="NameField" HorizontalAlignment="Left" Height="23" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
             <Label Content="Prezime" HorizontalAlignment="Left" Margin="135,10,0,0" VerticalAlignment="Top" Width="120"/>
@@ -34,7 +34,7 @@
             <TextBox x:Name="AddressField" HorizontalAlignment="Left" Height="23" Margin="260,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
             <Label Content="Email" HorizontalAlignment="Left" Margin="385,10,0,0" VerticalAlignment="Top" Width="75"/>
             <TextBox x:Name="EmailField" HorizontalAlignment="Left" Height="23" Margin="385,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Button x:Name="SearchBtn" Content="Pretrazi" HorizontalAlignment="Left" Margin="696,10,0,0" VerticalAlignment="Top" Width="92" Height="50" Click="SearchBtn_Click"/>
+            <Button x:Name="SearchBtn" Content="Pretrazi" Margin="0,10,10,0" VerticalAlignment="Top" Height="50" Click="SearchBtn_Click" HorizontalAlignment="Right" Width="92"/>
         </Grid>
 
     </Grid>

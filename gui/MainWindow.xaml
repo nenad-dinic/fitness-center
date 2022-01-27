@@ -14,7 +14,7 @@
         <Label Content="Lozinka:" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" Width="244"/>
         <Button x:Name="logInBtn" Content="Prijavi se" Margin="0,0,90,10" VerticalAlignment="Bottom" Click="Login_Click" HorizontalAlignment="Right" Width="75" TabIndex="3"/>
         <Button x:Name="BasicCenterInfoBtn" Content="Osnovne informacije o fitnes centru" Margin="10,10,10,0" VerticalAlignment="Top" Height="28" Click="BasicCenterInfoBtn_Click"/>
-        <Button x:Name="ViewTrainersBtn" Content="Instruktori" HorizontalAlignment="Left" Margin="71,43,0,0" VerticalAlignment="Top" Width="122" Click="ViewTrainersBtn_Click"/>
+        <Button x:Name="ViewTrainersBtn" Content="Instruktori" Margin="71,43,79,0" VerticalAlignment="Top" Click="ViewTrainersBtn_Click"/>
         <PasswordBox x:Name="PassField" Margin="10,170,10,0" VerticalAlignment="Top" Height="23" TabIndex="2"/>
     </Grid>
 </Window>

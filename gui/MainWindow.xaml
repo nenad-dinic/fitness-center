@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:SR44_2020_POP2021.Gui"
         xmlns:ComponentModel="clr-namespace:System.ComponentModel;assembly=System" x:Class="SR44_2020_POP2021.Gui.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="355.835" Width="272.133" Closed="Window_Closed">
+        Title="Prijava" Height="355.835" Width="272.133" Closed="Window_Closed">
     <Grid>
         <TextBox x:Name="JmbgField" Height="23" Margin="10,111,10,0" TextWrapping="Wrap" VerticalAlignment="Top" TabIndex="1"/>
         <Button x:Name="RegBtn" Content="Registruj se" Margin="0,0,10,10" Height="20" VerticalAlignment="Bottom" Click="RegBtn_Click" HorizontalAlignment="Right" Width="75" TabIndex="4"/>
@@ -14,7 +14,7 @@
         <Label Content="Lozinka:" HorizontalAlignment="Left" Margin="10,139,0,0" VerticalAlignment="Top" Width="244"/>
         <Button x:Name="logInBtn" Content="Prijavi se" Margin="0,0,90,10" VerticalAlignment="Bottom" Click="Login_Click" HorizontalAlignment="Right" Width="75" TabIndex="3"/>
         <Button x:Name="BasicCenterInfoBtn" Content="Osnovne informacije o fitnes centru" Margin="10,10,10,0" VerticalAlignment="Top" Height="28" Click="BasicCenterInfoBtn_Click"/>
-        <Button x:Name="ViewTrainersBtn" Content="Treneri" HorizontalAlignment="Left" Margin="71,43,0,0" VerticalAlignment="Top" Width="122" Click="ViewTrainersBtn_Click"/>
+        <Button x:Name="ViewTrainersBtn" Content="Instruktori" HorizontalAlignment="Left" Margin="71,43,0,0" VerticalAlignment="Top" Width="122" Click="ViewTrainersBtn_Click"/>
         <PasswordBox x:Name="PassField" Margin="10,170,10,0" VerticalAlignment="Top" Height="23" TabIndex="2"/>
     </Grid>
 </Window>
